@@ -1,0 +1,364 @@
+commands:
+-   _type_: PyTransformNewColumn
+    code: "value =  getValue(\"Artist_Birth_and_Death_Details\")\nidx = value.rfind(\"\
+        ,\")\nbirth = \"\"\nif(idx != -1) :\n    birth = value[idx+1:]\nbirthArr =\
+        \ birth.split(\"-\")   \nif(len(birthArr) > 1) : \n    birth = birthArr[0].strip()\n\
+        __return__ = birth"
+    default_error_value: ''
+    input_attr_paths:
+    - Artist_Birth_and_Death_Details
+    new_attr_name: birthDate
+-   _type_: PyTransformNewColumn
+    code: "value =  getValue(\"Artist_Birth_and_Death_Details\")\nidx = value.rfind(\"\
+        ,\")\ndeath = \"\"\nbirth = \"\"\nif(idx != -1) : \n    birth = value[idx+1:]\n\
+        birthArr = birth.split(\" - \")\nif(len(birthArr) > 1) : \n    death = birthArr[1].strip()\n\
+        __return__ = death"
+    default_error_value: ''
+    input_attr_paths:
+    - Artist_Birth_and_Death_Details
+    new_attr_name: deathDate
+-   _type_: PyTransformNewColumn
+    code: "value = getValue(\"Artwork_Title_and_Dates\")\ncreated = \"\"\nidx = value.rfind(\"\
+        ,\")\nif(idx != -1) : \n    created = value[idx+1:]\n__return__ = created"
+    default_error_value: ''
+    input_attr_paths:
+    - Artwork_Title_and_Dates
+    new_attr_name: creationDate
+-   _type_: PyTransformNewColumn
+    code: "value =  getValue(\"Artwork_Title_and_Dates\")\nidx = value.rfind(\",\"\
+        )\ntitle = value\nif(idx != -1) :\n    title = value[0:idx]  \n__return__\
+        \ = title"
+    default_error_value: ''
+    input_attr_paths:
+    - Artwork_Title_and_Dates
+    new_attr_name: title
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("birthDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - birthDate
+    new_attr_name: birth_date_earliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("birthDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - birthDate
+    new_attr_name: birth_date_latest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("deathDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - deathDate
+    new_attr_name: death_date_earliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("deathDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - deathDate
+    new_attr_name: death_date_latest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("creationDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - creationDate
+    new_attr_name: date_earliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("creationDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - creationDate
+    new_attr_name: date_latest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_object_uri("http://collectionsonline.lacma.org/object/",
+        getValue("Origin"))
+    default_error_value: ''
+    input_attr_paths:
+    - Origin
+    new_attr_name: object_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_production_uri(getValue("object_uri"))
+    default_error_value: ''
+    input_attr_paths:
+    - object_uri
+    new_attr_name: production_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_artist_uri("http://collectionsonline.lacma.org/person/",
+        Misc.slugify(getValue("Artist_Name")))
+    default_error_value: ''
+    input_attr_paths:
+    - Artist_Name
+    new_attr_name: artist_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_birth_uri(getValue("artist_uri"), getValue("birthDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - artist_uri
+    - birthDate
+    new_attr_name: birth_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_death_uri(getValue("artist_uri"), getValue("deathDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - artist_uri
+    - deathDate
+    new_attr_name: death_uri
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: deathDate
+    node_id: crm:E52_Time-Span2
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E35_Title
+    input_attr_path: title
+    node_id: crm:E35_Title1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birthDate
+    node_id: crm:E52_Time-Span1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E63_Beginning_of_Existence
+    input_attr_path: birth_uri
+    node_id: crm:E63_Beginning_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birth_date_earliest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: death_date_latest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E42_Identifier
+    input_attr_path: ID
+    node_id: crm:E42_Identifier1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birth_date_latest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: date_earliest
+    node_id: crm:E52_Time-Span3
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E38_Image
+    input_attr_path: Image_URL
+    node_id: crm:E38_Image1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E12_Production
+    input_attr_path: production_uri
+    node_id: crm:E12_Production1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: creationDate
+    node_id: crm:E52_Time-Span3
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E22_Man-Made_Object
+    input_attr_path: object_uri
+    node_id: crm:E22_Man-Made_Object1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: Artwork_Details
+    node_id: crm:E33_Linguistic_Object1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E64_End_of_Existence
+    input_attr_path: death_uri
+    node_id: crm:E64_End_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E82_Actor_Appellation
+    input_attr_path: Artist_Name
+    node_id: crm:E82_Actor_Appellation1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E42_Identifier
+    input_attr_path: Origin
+    node_id: crm:E42_Identifier2
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: death_date_earliest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: date_latest
+    node_id: crm:E52_Time-Span3
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E39_Actor
+    input_attr_path: artist_uri
+    node_id: crm:E39_Actor1
+    type: karma:classLink
+-   _type_: SetInternalLink
+    link_lbl: crm:P1_is_identified_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E42_Identifier1
+    target_uri: crm:E42_Identifier
+-   _type_: SetInternalLink
+    link_lbl: crm:P1_is_identified_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E42_Identifier2
+    target_uri: crm:E42_Identifier
+-   _type_: SetInternalLink
+    link_lbl: crm:P131_is_identified_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E82_Actor_Appellation1
+    target_uri: crm:E82_Actor_Appellation
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object1
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P138i_has_representation
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E38_Image1
+    target_uri: crm:E38_Image
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E63_Beginning_of_Existence1
+    source_uri: crm:E63_Beginning_of_Existence
+    target_id: crm:E52_Time-Span1
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E64_End_of_Existence1
+    source_uri: crm:E64_End_of_Existence
+    target_id: crm:E52_Time-Span2
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P102_has_title
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E35_Title1
+    target_uri: crm:E35_Title
+-   _type_: SetInternalLink
+    link_lbl: crm:P92i_was_brought_into_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E63_Beginning_of_Existence1
+    target_uri: crm:E63_Beginning_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P93i_was_taken_out_of_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E64_End_of_Existence1
+    target_uri: crm:E64_End_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P14_carried_out_by
+    source_id: crm:E12_Production1
+    source_uri: crm:E12_Production
+    target_id: crm:E39_Actor1
+    target_uri: crm:E39_Actor
+-   _type_: SetInternalLink
+    link_lbl: crm:P108i_was_produced_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E12_Production1
+    target_uri: crm:E12_Production
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E12_Production1
+    source_uri: crm:E12_Production
+    target_id: crm:E52_Time-Span3
+    target_uri: crm:E52_Time-Span
+history:
+    all_attrs:
+    - ID
+    - Artist_Name
+    - Artist_Birth_and_Death_Details
+    - Artwork_Title_and_Dates
+    - Artwork_Details
+    - Origin
+    - Artwork_in_Focus
+    - About_the_Era
+    - Clothing_and_Furniture_of_this_Era
+    - Provenance
+    - Literature
+    - Image_URL
+    - birthDate
+    - deathDate
+    - creationDate
+    - title
+    - birth_date_earliest
+    - birth_date_latest
+    - death_date_earliest
+    - death_date_latest
+    - date_earliest
+    - date_latest
+    - object_uri
+    - production_uri
+    - artist_uri
+    - birth_uri
+    - death_uri
+    ignored_attrs:
+    - Artwork_in_Focus
+    - About_the_Era
+    - Clothing_and_Furniture_of_this_Era
+    - Provenance
+    - Literature
+    - Artist_Birth_and_Death_Details
+    - Artwork_Title_and_Dates
+    input_attrs:
+    - ID
+    - Artist_Name
+    - Artist_Birth_and_Death_Details
+    - Artwork_Title_and_Dates
+    - Artwork_Details
+    - Origin
+    - Artwork_in_Focus
+    - About_the_Era
+    - Clothing_and_Furniture_of_this_Era
+    - Provenance
+    - Literature
+    - Image_URL
+    processed_attrs:
+    - ID
+    - Artist_Name
+    - Artwork_Details
+    - Origin
+    - Image_URL
+    - birthDate
+    - deathDate
+    - creationDate
+    - title
+    - birth_date_earliest
+    - birth_date_latest
+    - death_date_earliest
+    - death_date_latest
+    - date_earliest
+    - date_latest
+    - object_uri
+    - production_uri
+    - artist_uri
+    - birth_uri
+    - death_uri

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ssh -t rook@sequoia "\
+    export RUST_BACKTRACE=$RUST_BACKTRACE; \
+    export PYTHONPATH=$PYTHONPATH; \
+    export RUST_LOG=$RUST_LOG; \
+    cd /Users/rook/workspace/DataIntegration/semantic-modeling; source ~/.bashrc; \
+    cargo $@"

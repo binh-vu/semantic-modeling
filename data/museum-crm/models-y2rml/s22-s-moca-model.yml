@@ -1,0 +1,222 @@
+commands:
+-   _type_: PyTransformNewColumn
+    code: "value = getValue(\"Artwork_Name_and_Year\")\nidx = value.rfind(\",\")\n\
+        title = value\nif(idx != -1) : \n    title = value[0:idx].strip()\n__return__\
+        \ = title"
+    default_error_value: ''
+    input_attr_paths:
+    - Artwork_Name_and_Year
+    new_attr_name: title
+-   _type_: PyTransformNewColumn
+    code: "value = getValue(\"Artwork_Name_and_Year\")\nidx = value.rfind(\",\")\n\
+        created = \"\"\nif(idx != -1) : \n    created = value[idx+1:].strip()\n__return__\
+        \ = created"
+    default_error_value: ''
+    input_attr_paths:
+    - Artwork_Name_and_Year
+    new_attr_name: creationDate
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("creationDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - creationDate
+    new_attr_name: date_earliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("creationDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - creationDate
+    new_attr_name: date_latest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_object_uri("http://www.moca.org/museum/object/",
+        getValue("Assension_Number"))
+    default_error_value: ''
+    input_attr_paths:
+    - Assension_Number
+    new_attr_name: object_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_production_uri(getValue("object_uri"))
+    default_error_value: ''
+    input_attr_paths:
+    - object_uri
+    new_attr_name: production_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_artist_uri("http://www.moca.org/museum/person/",
+        Misc.slugify(getValue("Artist_Name")))
+    default_error_value: ''
+    input_attr_paths:
+    - Artist_Name
+    new_attr_name: artist_uri
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: creationDate
+    node_id: crm:E52_Time-Span1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E22_Man-Made_Object
+    input_attr_path: object_uri
+    node_id: crm:E22_Man-Made_Object1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E12_Production
+    input_attr_path: production_uri
+    node_id: crm:E12_Production1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E42_Identifier
+    input_attr_path: Assension_Number
+    node_id: crm:E42_Identifier1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E35_Title
+    input_attr_path: title
+    node_id: crm:E35_Title1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: Dimensions
+    node_id: crm:E33_Linguistic_Object2
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: Process
+    node_id: crm:E33_Linguistic_Object1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: Provenance
+    node_id: crm:E33_Linguistic_Object3
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E38_Image
+    input_attr_path: image
+    node_id: crm:E38_Image1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E39_Actor
+    input_attr_path: artist_uri
+    node_id: crm:E39_Actor1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E82_Actor_Appellation
+    input_attr_path: Artist_Name
+    node_id: crm:E82_Actor_Appellation1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: date_latest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: date_earliest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetInternalLink
+    link_lbl: crm:P131_is_identified_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E82_Actor_Appellation1
+    target_uri: crm:E82_Actor_Appellation
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object1
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object2
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object3
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P138i_has_representation
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E38_Image1
+    target_uri: crm:E38_Image
+-   _type_: SetInternalLink
+    link_lbl: crm:P1_is_identified_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E42_Identifier1
+    target_uri: crm:E42_Identifier
+-   _type_: SetInternalLink
+    link_lbl: crm:P102_has_title
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E35_Title1
+    target_uri: crm:E35_Title
+-   _type_: SetInternalLink
+    link_lbl: crm:P14_carried_out_by
+    source_id: crm:E12_Production1
+    source_uri: crm:E12_Production
+    target_id: crm:E39_Actor1
+    target_uri: crm:E39_Actor
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E12_Production1
+    source_uri: crm:E12_Production
+    target_id: crm:E52_Time-Span1
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P108i_was_produced_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E12_Production1
+    target_uri: crm:E12_Production
+history:
+    all_attrs:
+    - '@name'
+    - Artist_Name
+    - Artwork_Name_and_Year
+    - Process
+    - Dimensions
+    - Provenance
+    - Assension_Number
+    - image
+    - title
+    - creationDate
+    - date_earliest
+    - date_latest
+    - object_uri
+    - production_uri
+    - artist_uri
+    ignored_attrs:
+    - '@name'
+    - Artwork_Name_and_Year
+    input_attrs:
+    - '@name'
+    - Artist_Name
+    - Artwork_Name_and_Year
+    - Process
+    - Dimensions
+    - Provenance
+    - Assension_Number
+    - image
+    processed_attrs:
+    - Artist_Name
+    - Process
+    - Dimensions
+    - Provenance
+    - Assension_Number
+    - image
+    - title
+    - creationDate
+    - date_earliest
+    - date_latest
+    - object_uri
+    - production_uri
+    - artist_uri

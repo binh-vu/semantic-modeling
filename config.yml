@@ -1,0 +1,95 @@
+redis:
+    host: localhost
+    port: 6379
+    db: 0
+fsys:
+    __comment__: Path to folder in the project
+    debug:
+        __workdir__: debug
+        tmp: tmp
+    bin: bin
+    data: data
+    tests: tests
+previous_works:
+    minhptx_iswc2016:
+        cli: ../iswc-2016-semantic-labeling/bin/semantic_labeling.sh
+    mohsen_jws2015:
+        cli: bin/karma-research.jar
+ontologies:
+    __workdir__: data/ontologies
+    dcterms:
+        fpath: dcterms_od.ttl
+        namespace: http://purl.org/dc/terms/
+    dc:
+        fpath: dc.ttl
+        namespace: http://purl.org/dc/elements/1.1/
+    rdf:
+        namespace: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+    rdfs:
+        namespace: http://www.w3.org/2000/01/rdf-schema#
+    geo:
+        namespace: http://www.w3.org/2003/01/geo/wgs84_pos#
+    karma:
+        fpath: karma.ttl
+        namespace: http://isi.edu/integration/karma/dev#
+datasets:
+    __workdir__: data
+    museum_edm:
+        __workdir__: museum-edm
+        data: sources
+        karma_version: karma-version
+        models_y2rml: models-y2rml
+        python_code: python
+        ontology:
+            __workdir__: ontologies
+            rdfs: "@ontologies.rdfs"
+            karma: "@ontologies.karma"
+            dcterms: "@ontologies.dcterms"
+            dc: "@ontologies.dc"
+            foaf:
+                fpath: 140_foaf.owl
+                namespace: http://xmlns.com/foaf/0.1/
+            ElementsGr2:
+                fpath: 180_rdaGr2.rdf
+                namespace: http://rdvocab.info/ElementsGr2/
+            ore:
+                fpath: 190_ore.owl
+                namespace: http://www.openarchives.org/ore/terms/
+            edm:
+                fpath: 220_edm_from_xuming.owl
+                namespace: http://www.europeana.eu/schemas/edm/
+            saam-ont:
+                fpath: 230_saam-ont.owl
+                namespace: http://americanart.si.edu/ontology/
+            skos:
+                fpath: 250_skos.owl
+                namespace: http://www.w3.org/2008/05/skos#
+            aac-ont:
+                fpath: 260_aac-ont.owl
+                namespace: http://www.americanartcollaborative.org/ontology/
+    museum_crm:
+        __workdir__: museum-crm
+        data: sources
+        karma_version: karma-version
+        models_y2rml: models-y2rml
+        python_code: python
+        ontology:
+            __workdir__: ontologies
+            rdf: "@ontologies.rdf"
+            rdfs: "@ontologies.rdfs"
+            karma: "@ontologies.karma"
+            dcterms:
+                fpath: dcterms.ttl
+                namespace: http://purl.org/dc/terms/
+            skos:
+                namespace: http://www.w3.org/2008/05/skos#
+                fpath: skos.owl
+            foaf:
+                namespace: http://xmlns.com/foaf/0.1/
+                fpath: foaf.owl
+            crm:
+                namespace: http://www.cidoc-crm.org/cidoc-crm/
+                fpath: cidoc-crm-v6_2.rdf
+            geo: "@ontologies.geo"
+            aat: {namespace: "http://vocab.getty.edu/aat/"}
+            ulan: {namespace: "http://vocab.getty.edu/ulan/"}

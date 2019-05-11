@@ -1,0 +1,97 @@
+commands:
+-   _type_: PyTransformNewColumn
+    code: "value =  getValue(\"Artist_Birth_and_Death_Details\")\nidx = value.rfind(\"\
+        ,\")\nbirth = \"\"\nif(idx != -1) :\n    birth = value[idx+1:]\nbirthArr =\
+        \ birth.split(\"-\")   \nif(len(birthArr) > 1) : \n    birth = birthArr[0].strip()\n\
+        __return__ = birth"
+    default_error_value: ''
+    input_attr_paths:
+    - Artist_Birth_and_Death_Details
+    new_attr_name: birthDate
+-   _type_: PyTransformNewColumn
+    code: "value =  getValue(\"Artist_Birth_and_Death_Details\")\nidx = value.rfind(\"\
+        ,\")\ndeath = \"\"\nbirth = \"\"\nif(idx != -1) : \n    birth = value[idx+1:]\n\
+        birthArr = birth.split(\" - \")\nif(len(birthArr) > 1) : \n    death = birthArr[1].strip()\n\
+        __return__ = death"
+    default_error_value: ''
+    input_attr_paths:
+    - Artist_Birth_and_Death_Details
+    new_attr_name: deathDate
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: birthDate
+    node_id: aac-ont:Person1
+    type: ElementsGr2:dateOfBirth
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: deathDate
+    node_id: aac-ont:Person1
+    type: ElementsGr2:dateOfDeath
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: Artist_Name
+    node_id: aac-ont:Person1
+    type: ElementsGr2:nameOfThePerson
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: Artwork_Details
+    node_id: aac-ont:CulturalHeritageObject1
+    type: dcterms:description
+-   _type_: PyTransformNewColumn
+    code: "value = getValue(\"Artwork_Title_and_Dates\")\ncreated = \"\"\nidx = value.rfind(\"\
+        ,\")\nif(idx != -1) : \n    created = value[idx+1:]\n__return__ = created"
+    default_error_value: ''
+    input_attr_paths:
+    - Artwork_Title_and_Dates
+    new_attr_name: creationDate
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: creationDate
+    node_id: aac-ont:CulturalHeritageObject1
+    type: dcterms:created
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: ID
+    node_id: aac-ont:CulturalHeritageObject1
+    type: aac-ont:objectId
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: Origin
+    node_id: aac-ont:CulturalHeritageObject1
+    type: aac-ont:accessionNumber
+-   _type_: SetSemanticType
+    domain: edm:WebResource
+    input_attr_path: Image_URL
+    node_id: edm:WebResource1
+    type: karma:classLink
+-   _type_: PyTransformNewColumn
+    code: "value =  getValue(\"Artwork_Title_and_Dates\")\nidx = value.rfind(\",\"\
+        )\ntitle = value\nif(idx != -1) :\n    title = value[0:idx]  \n__return__\
+        \ = title"
+    default_error_value: ''
+    input_attr_paths:
+    - Artwork_Title_and_Dates
+    new_attr_name: title
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: title
+    node_id: aac-ont:CulturalHeritageObject1
+    type: dcterms:title
+-   _type_: SetInternalLink
+    link_lbl: dcterms:creator
+    source_id: aac-ont:CulturalHeritageObject1
+    source_uri: aac-ont:CulturalHeritageObject
+    target_id: aac-ont:Person1
+    target_uri: aac-ont:Person
+-   _type_: SetInternalLink
+    link_lbl: edm:aggregatedCHO
+    source_id: edm:EuropeanaAggregation1
+    source_uri: edm:EuropeanaAggregation
+    target_id: aac-ont:CulturalHeritageObject1
+    target_uri: aac-ont:CulturalHeritageObject
+-   _type_: SetInternalLink
+    link_lbl: edm:hasView
+    source_id: edm:EuropeanaAggregation1
+    source_uri: edm:EuropeanaAggregation
+    target_id: edm:WebResource1
+    target_uri: edm:WebResource

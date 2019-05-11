@@ -1,0 +1,44 @@
+commands:
+-   _type_: PyTransformNewColumn
+    code: __return__ = getValue("birthDeath")[0:4]
+    default_error_value: ''
+    input_attr_paths:
+    - birthDeath
+    new_attr_name: birthDate
+-   _type_: PyTransformNewColumn
+    code: __return__ = getValue("birthDeath")[5:]
+    default_error_value: ''
+    input_attr_paths:
+    - birthDeath
+    new_attr_name: deathDate
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: birthDate
+    node_id: aac-ont:Person1
+    type: ElementsGr2:dateOfBirth
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: deathDate
+    node_id: aac-ont:Person1
+    type: ElementsGr2:dateOfDeath
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: '@title'
+    node_id: aac-ont:CulturalHeritageObject1
+    type: dcterms:title
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: nationality
+    node_id: aac-ont:Person1
+    type: ElementsGr2:countryAssociatedWithThePerson
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: name
+    node_id: aac-ont:Person1
+    type: ElementsGr2:nameOfThePerson
+-   _type_: SetInternalLink
+    link_lbl: dcterms:creator
+    source_id: aac-ont:CulturalHeritageObject1
+    source_uri: aac-ont:CulturalHeritageObject
+    target_id: aac-ont:Person1
+    target_uri: null

@@ -1,0 +1,68 @@
+[
+    {
+        "ID":"27824",
+        "Artist_Name":"Ben Abril",
+        "deathDate":"1995",
+        "birthDate":"1923",
+        "title":"The Old Hall of Records",
+        "creationDate":"1966",
+        "Artwork_Details":"Painting Oil on canvas 48 3\/16 x 60 1\/16 in. 122.4 x 152.56 cm Signed lower right: BEN ABRIL. Inscribed and dated lower left: OLD HALL OF RECORDS \/ LOS ANGELES CALIF. 1966 Museum Associates Acquisition Fund",
+        "Origin":"M.67.89",
+        "Image_URL":"http:\/\/collectionsonline.lacma.org\/MWEBimages\/aa_mm\/full\/M67_89.jpg"
+    },
+    {
+        "ID":"10763",
+        "Artist_Name":"Wayman Adams",
+        "deathDate":"1959",
+        "birthDate":"1883",
+        "title":"Portrait of William Preston Harrison",
+        "creationDate":"1924",
+        "Artwork_Details":"Painting Oil on canvas 52 1\/16 x 40 1\/16 in. 132.24 x 101.76 cm Mr. and Mrs. William Preston Harrison Collection",
+        "Origin":"25.6.2",
+        "Image_URL":"http:\/\/collectionsonline.lacma.org\/MWEBimages\/all%20departments\/thumb\/25_6_2.jpg"
+    },
+    {
+        "ID":"48602",
+        "Artist_Name":"John White Alexander",
+        "deathDate":"1915",
+        "birthDate":"1856",
+        "title":"Portrait of Mrs. John White Alexander",
+        "creationDate":"1902",
+        "Artwork_Details":"Painting Oil on canvas 62 1\/4 x 52 1\/8 in. 158.2 x 132.4 cm Gift of Dr. and Mrs. Matthew S. Mickiewicz",
+        "Origin":"M.81.182",
+        "Image_URL":"http:\/\/collectionsonline.lacma.org\/MWEBimages\/aa_mm\/full\/M81_182.jpg"
+    },
+    {
+        "ID":"71392",
+        "Artist_Name":"Mabel Alvarez",
+        "deathDate":"1985",
+        "birthDate":"1891",
+        "title":"Arabella with Calla Lillies",
+        "creationDate":"1934",
+        "Artwork_Details":"Painting Oil on canvas 40 x 30 in. 101.6 x 76.2 cm Gift of Margery and Maurice H. Katz",
+        "Origin":"M.91.326",
+        "Image_URL":"http:\/\/collectionsonline.lacma.org\/MWEBimages\/aa_mm\/full\/M91_326.jpg"
+    },
+    {
+        "ID":"137517",
+        "Artist_Name":"Robert Witt Ames",
+        "deathDate":"1985-04-26",
+        "birthDate":"1896",
+        "title":"Hollywood",
+        "creationDate":"1935",
+        "Artwork_Details":"Sculpture: Mahogany bas relief carving Framed: 61 x 87 1\/4 x 2 in. 154.9 x 221.6 x 5.1 cm Gift from the Estate of Barbara Carol Weston sister of Robert Witt Ames",
+        "Origin":"M.2002.85",
+        "Image_URL":"http:\/\/collectionsonline.lacma.org\/MWEBimages\/all%20departments\/thumb\/M2002_85.jpg"
+    },
+    {
+        "ID":"152811",
+        "Artist_Name":"Toshio Aoki",
+        "deathDate":"1912",
+        "birthDate":"1854",
+        "title":"Woman with Birds",
+        "creationDate":"1890s",
+        "Artwork_Details":"Watercolor Watercolor on paper Framed: 40 1\/2 x 34 3\/4 x 3\/4 in. 102.87 x 88.265 x 1.905 cm; Image and sheet: 28 x 22 in. 71.12 x 55.88 cm Purchased with funds provided by Mr. and Mrs. Thomas H. Crawford Jr.",
+        "Origin":"M.2005.115.1",
+        "Image_URL":"http:\/\/collectionsonline.lacma.org\/MWEBimages\/all%20departments\/full\/M2005_115_1.jpg"
+    }
+]

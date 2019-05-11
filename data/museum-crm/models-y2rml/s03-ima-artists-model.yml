@@ -1,0 +1,192 @@
+commands:
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.parse_noisy_birth_and_death_year(getValue("birthDeath"))[0]
+    default_error_value: ''
+    input_attr_paths:
+    - birthDeath
+    new_attr_name: birthDate
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.parse_noisy_birth_and_death_year(getValue("birthDeath"))[1]
+    default_error_value: ''
+    input_attr_paths:
+    - birthDeath
+    new_attr_name: deathDate
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("birthDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - birthDate
+    new_attr_name: birth_date_earliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("birthDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - birthDate
+    new_attr_name: birth_date_latest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("deathDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - deathDate
+    new_attr_name: death_date_earliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("deathDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - deathDate
+    new_attr_name: death_date_latest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_artist_uri("www.imamuseum.org/person/", getValue("name"))
+    default_error_value: ''
+    input_attr_paths:
+    - name
+    new_attr_name: artist_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_birth_uri(getValue("artist_uri"), getValue("birthDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - birthDate
+    - artist_uri
+    new_attr_name: birth_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_death_uri(getValue("artist_uri"), getValue("deathDate"))
+    default_error_value: ''
+    input_attr_paths:
+    - deathDate
+    - artist_uri
+    new_attr_name: death_uri
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: death_date_latest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E63_Beginning_of_Existence
+    input_attr_path: birth_uri
+    node_id: crm:E63_Beginning_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E82_Actor_Appellation
+    input_attr_path: name
+    node_id: crm:E82_Actor_Appellation1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: deathDate
+    node_id: crm:E52_Time-Span2
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birthDate
+    node_id: crm:E52_Time-Span1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: death_date_earliest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E74_Group
+    input_attr_path: nationality
+    node_id: crm:E74_Group1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birth_date_earliest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birth_date_latest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E39_Actor
+    input_attr_path: artist_uri
+    node_id: crm:E39_Actor1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E64_End_of_Existence
+    input_attr_path: death_uri
+    node_id: crm:E64_End_of_Existence1
+    type: karma:classLink
+-   _type_: SetInternalLink
+    link_lbl: crm:P131_is_identified_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E82_Actor_Appellation1
+    target_uri: crm:E82_Actor_Appellation
+-   _type_: SetInternalLink
+    link_lbl: crm:P107i_is_current_or_former_member_of
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E74_Group1
+    target_uri: crm:E74_Group
+-   _type_: SetInternalLink
+    link_lbl: crm:P92i_was_brought_into_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E63_Beginning_of_Existence1
+    target_uri: crm:E63_Beginning_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P93i_was_taken_out_of_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E64_End_of_Existence1
+    target_uri: crm:E64_End_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E63_Beginning_of_Existence1
+    source_uri: crm:E63_Beginning_of_Existence
+    target_id: crm:E52_Time-Span1
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E64_End_of_Existence1
+    source_uri: crm:E64_End_of_Existence
+    target_id: crm:E52_Time-Span2
+    target_uri: crm:E52_Time-Span
+history:
+    all_attrs:
+    - '@title'
+    - name
+    - nationality
+    - birthDeath
+    - deathDate
+    - birthDate
+    - birth_date_earliest
+    - birth_date_latest
+    - death_date_earliest
+    - death_date_latest
+    - artist_uri
+    - birth_uri
+    - death_uri
+    ignored_attrs:
+    - '@title'
+    - birthDeath
+    input_attrs:
+    - '@title'
+    - name
+    - nationality
+    - birthDeath
+    processed_attrs:
+    - name
+    - nationality
+    - birthDate
+    - deathDate
+    - birth_date_earliest
+    - birth_date_latest
+    - death_date_earliest
+    - death_date_latest
+    - artist_uri
+    - birth_uri
+    - death_uri

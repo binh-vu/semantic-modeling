@@ -1,0 +1,26 @@
+{
+  "comment": "Example 1, no dependent but have incorrect link",
+  "gold_sm": [
+    "ManMadeObject1--was_classified_by--TypeAssignment1",
+    "TypeAssignment1--assigned--Type1",
+    "Type1--label--type_a:d",
+    "ManMadeObject1--was_classified_by--TypeAssignment2",
+    "TypeAssignment2--assigned--Type2",
+    "Type2--label--type_b:d"
+  ],
+  "pred_sm": [
+    "ManMadeObject1--was_classified_by--TypeAssignment1",
+    "TypeAssignment1--assigned--Type1",
+    "Type1--label--type_b:d"
+  ],
+  "bijection": {
+    "ManMadeObject1": "ManMadeObject1",
+    "TypeAssignment2": "TypeAssignment1",
+    "Type2": "Type1"
+  },
+  "f1_precision_recall": [
+    0.6666666666666666,
+    1.0,
+    0.5
+  ]
+}

@@ -1,0 +1,3160 @@
+{
+  "graph": {
+    "index_link_label": true,
+    "index_node_label": true,
+    "index_node_type": true,
+    "links": [
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s01-cb",
+            "s04-ima-artworks",
+            "s11-s-19-artists",
+            "s07-s-13",
+            "s03-ima-artists",
+            "s06-npg",
+            "s02-dma",
+            "s09-s-18-artists"
+          ]
+        },
+        "id": 0,
+        "label": "crm:P82b_end_of_the_end",
+        "source_id": 7,
+        "target_id": 11,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s04-ima-artworks",
+            "s02-dma",
+            "s03-ima-artists",
+            "s01-cb",
+            "s10-s-18-artworks",
+            "s08-s-17-edited",
+            "s14-s-california-african-american",
+            "s11-s-19-artists",
+            "s13-s-art-institute-of-chicago",
+            "s05-met",
+            "s09-s-18-artists",
+            "s07-s-13",
+            "s06-npg",
+            "s12-s-19-artworks"
+          ]
+        },
+        "id": 1,
+        "label": "rdf:value",
+        "source_id": 10,
+        "target_id": 12,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg",
+            "s04-ima-artworks",
+            "s07-s-13",
+            "s11-s-19-artists",
+            "s09-s-18-artists",
+            "s01-cb",
+            "s03-ima-artists",
+            "s13-s-art-institute-of-chicago",
+            "s02-dma"
+          ]
+        },
+        "id": 2,
+        "label": "crm:P82b_end_of_the_end",
+        "source_id": 6,
+        "target_id": 13,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s01-cb"
+          ]
+        },
+        "id": 3,
+        "label": "karma:classLink",
+        "source_id": 3,
+        "target_id": 14,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s07-s-13",
+            "s10-s-18-artworks",
+            "s04-ima-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s02-dma",
+            "s11-s-19-artists",
+            "s05-met",
+            "s01-cb",
+            "s12-s-19-artworks",
+            "s06-npg",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 4,
+        "label": "rdf:value",
+        "source_id": 2,
+        "target_id": 15,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma",
+            "s01-cb"
+          ]
+        },
+        "id": 5,
+        "label": "karma:classLink",
+        "source_id": 5,
+        "target_id": 16,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s03-ima-artists",
+            "s01-cb",
+            "s07-s-13",
+            "s10-s-18-artworks",
+            "s04-ima-artworks",
+            "s08-s-17-edited",
+            "s05-met",
+            "s06-npg",
+            "s13-s-art-institute-of-chicago",
+            "s02-dma",
+            "s12-s-19-artworks",
+            "s09-s-18-artists",
+            "s14-s-california-african-american",
+            "s11-s-19-artists"
+          ]
+        },
+        "id": 6,
+        "label": "karma:classLink",
+        "source_id": 4,
+        "target_id": 17,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg",
+            "s01-cb",
+            "s09-s-18-artists",
+            "s03-ima-artists",
+            "s02-dma",
+            "s11-s-19-artists",
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s07-s-13"
+          ]
+        },
+        "id": 7,
+        "label": "karma:classLink",
+        "source_id": 8,
+        "target_id": 18,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s01-cb",
+            "s05-met",
+            "s02-dma",
+            "s06-npg",
+            "s12-s-19-artworks",
+            "s04-ima-artworks",
+            "s07-s-13"
+          ]
+        },
+        "id": 8,
+        "label": "rdfs:label",
+        "source_id": 5,
+        "target_id": 19,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s12-s-19-artworks",
+            "s07-s-13",
+            "s01-cb",
+            "s02-dma",
+            "s05-met",
+            "s06-npg",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 9,
+        "label": "crm:P82a_begin_of_the_begin",
+        "source_id": 5,
+        "target_id": 20,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg",
+            "s09-s-18-artists",
+            "s07-s-13",
+            "s03-ima-artists",
+            "s01-cb",
+            "s04-ima-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s11-s-19-artists"
+          ]
+        },
+        "id": 10,
+        "label": "crm:P82a_begin_of_the_begin",
+        "source_id": 6,
+        "target_id": 21,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s01-cb"
+          ]
+        },
+        "id": 11,
+        "label": "karma:classLink",
+        "source_id": 2,
+        "target_id": 22,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s01-cb",
+            "s04-ima-artworks",
+            "s02-dma",
+            "s05-met",
+            "s06-npg",
+            "s07-s-13",
+            "s12-s-19-artworks"
+          ]
+        },
+        "id": 12,
+        "label": "crm:P82b_end_of_the_end",
+        "source_id": 5,
+        "target_id": 23,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma",
+            "s01-cb"
+          ]
+        },
+        "id": 13,
+        "label": "karma:classLink",
+        "source_id": 7,
+        "target_id": 24,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg",
+            "s11-s-19-artists",
+            "s02-dma",
+            "s09-s-18-artists",
+            "s13-s-art-institute-of-chicago",
+            "s01-cb",
+            "s04-ima-artworks",
+            "s03-ima-artists",
+            "s07-s-13"
+          ]
+        },
+        "id": 14,
+        "label": "rdfs:label",
+        "source_id": 6,
+        "target_id": 25,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s09-s-18-artists",
+            "s11-s-19-artists",
+            "s13-s-art-institute-of-chicago",
+            "s06-npg",
+            "s01-cb",
+            "s02-dma",
+            "s03-ima-artists",
+            "s04-ima-artworks",
+            "s07-s-13"
+          ]
+        },
+        "id": 15,
+        "label": "crm:P82a_begin_of_the_begin",
+        "source_id": 7,
+        "target_id": 26,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s07-s-13",
+            "s02-dma",
+            "s12-s-19-artworks",
+            "s14-s-california-african-american",
+            "s05-met",
+            "s10-s-18-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s01-cb",
+            "s04-ima-artworks",
+            "s06-npg",
+            "s08-s-17-edited"
+          ]
+        },
+        "id": 16,
+        "label": "karma:classLink",
+        "source_id": 0,
+        "target_id": 27,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s01-cb",
+            "s02-dma"
+          ]
+        },
+        "id": 17,
+        "label": "karma:classLink",
+        "source_id": 10,
+        "target_id": 28,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s01-cb",
+            "s02-dma"
+          ]
+        },
+        "id": 18,
+        "label": "karma:classLink",
+        "source_id": 6,
+        "target_id": 29,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s03-ima-artists",
+            "s04-ima-artworks",
+            "s06-npg",
+            "s07-s-13",
+            "s09-s-18-artists",
+            "s02-dma",
+            "s13-s-art-institute-of-chicago",
+            "s11-s-19-artists",
+            "s01-cb"
+          ]
+        },
+        "id": 19,
+        "label": "karma:classLink",
+        "source_id": 9,
+        "target_id": 30,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s01-cb",
+            "s04-ima-artworks",
+            "s06-npg",
+            "s11-s-19-artists",
+            "s07-s-13",
+            "s03-ima-artists",
+            "s13-s-art-institute-of-chicago",
+            "s02-dma",
+            "s09-s-18-artists"
+          ]
+        },
+        "id": 20,
+        "label": "rdfs:label",
+        "source_id": 7,
+        "target_id": 31,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s08-s-17-edited",
+            "s07-s-13",
+            "s14-s-california-african-american",
+            "s02-dma",
+            "s01-cb",
+            "s04-ima-artworks",
+            "s05-met",
+            "s06-npg",
+            "s09-s-18-artists",
+            "s10-s-18-artworks",
+            "s11-s-19-artists"
+          ]
+        },
+        "id": 21,
+        "label": "rdf:value",
+        "source_id": 3,
+        "target_id": 32,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s04-ima-artworks",
+            "s08-s-17-edited",
+            "s01-cb",
+            "s05-met",
+            "s07-s-13",
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s10-s-18-artworks",
+            "s14-s-california-african-american",
+            "s02-dma",
+            "s06-npg"
+          ]
+        },
+        "id": 22,
+        "label": "karma:classLink",
+        "source_id": 1,
+        "target_id": 33,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s12-s-19-artworks",
+            "s03-ima-artists",
+            "s04-ima-artworks",
+            "s11-s-19-artists",
+            "s01-cb",
+            "s10-s-18-artworks",
+            "s07-s-13",
+            "s09-s-18-artists",
+            "s05-met",
+            "s13-s-art-institute-of-chicago",
+            "s02-dma",
+            "s08-s-17-edited",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 23,
+        "label": "crm:P131_is_identified_by",
+        "source_id": 4,
+        "target_id": 10,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s03-ima-artists",
+            "s11-s-19-artists",
+            "s09-s-18-artists",
+            "s01-cb",
+            "s07-s-13",
+            "s04-ima-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s02-dma"
+          ]
+        },
+        "id": 24,
+        "label": "crm:P92i_was_brought_into_existence_by",
+        "source_id": 4,
+        "target_id": 8,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s09-s-18-artists",
+            "s01-cb",
+            "s13-s-art-institute-of-chicago",
+            "s11-s-19-artists",
+            "s02-dma",
+            "s03-ima-artists",
+            "s04-ima-artworks",
+            "s07-s-13"
+          ]
+        },
+        "id": 25,
+        "label": "crm:P93i_was_taken_out_of_existence_by",
+        "source_id": 4,
+        "target_id": 9,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s04-ima-artworks",
+            "s01-cb",
+            "s03-ima-artists",
+            "s07-s-13",
+            "s02-dma",
+            "s11-s-19-artists",
+            "s09-s-18-artists",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 26,
+        "label": "crm:P4_has_time-span",
+        "source_id": 8,
+        "target_id": 7,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s09-s-18-artists",
+            "s01-cb",
+            "s11-s-19-artists",
+            "s13-s-art-institute-of-chicago",
+            "s03-ima-artists",
+            "s04-ima-artworks",
+            "s02-dma",
+            "s07-s-13",
+            "s06-npg"
+          ]
+        },
+        "id": 27,
+        "label": "crm:P4_has_time-span",
+        "source_id": 9,
+        "target_id": 6,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s04-ima-artworks",
+            "s06-npg",
+            "s12-s-19-artworks",
+            "s01-cb",
+            "s02-dma",
+            "s07-s-13",
+            "s05-met"
+          ]
+        },
+        "id": 28,
+        "label": "crm:P4_has_time-span",
+        "source_id": 0,
+        "target_id": 5,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma",
+            "s13-s-art-institute-of-chicago",
+            "s12-s-19-artworks",
+            "s14-s-california-african-american",
+            "s04-ima-artworks",
+            "s06-npg",
+            "s05-met",
+            "s10-s-18-artworks",
+            "s01-cb",
+            "s07-s-13",
+            "s08-s-17-edited"
+          ]
+        },
+        "id": 29,
+        "label": "crm:P14_carried_out_by",
+        "source_id": 0,
+        "target_id": 4,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma",
+            "s07-s-13",
+            "s14-s-california-african-american",
+            "s06-npg",
+            "s10-s-18-artworks",
+            "s12-s-19-artworks",
+            "s01-cb",
+            "s08-s-17-edited",
+            "s04-ima-artworks",
+            "s05-met",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 30,
+        "label": "crm:P108i_was_produced_by",
+        "source_id": 1,
+        "target_id": 0,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s05-met",
+            "s13-s-art-institute-of-chicago",
+            "s07-s-13",
+            "s12-s-19-artworks",
+            "s14-s-california-african-american",
+            "s06-npg",
+            "s04-ima-artworks",
+            "s01-cb",
+            "s02-dma",
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 31,
+        "label": "crm:P67i_is_referred_to_by",
+        "source_id": 1,
+        "target_id": 2,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s04-ima-artworks",
+            "s05-met",
+            "s10-s-18-artworks",
+            "s06-npg",
+            "s07-s-13",
+            "s12-s-19-artworks",
+            "s14-s-california-african-american",
+            "s01-cb",
+            "s02-dma",
+            "s08-s-17-edited",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 32,
+        "label": "crm:P67i_is_referred_to_by",
+        "source_id": 1,
+        "target_id": 3,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s07-s-13",
+            "s06-npg",
+            "s04-ima-artworks",
+            "s12-s-19-artworks",
+            "s10-s-18-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s02-dma",
+            "s08-s-17-edited",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 33,
+        "label": "rdf:value",
+        "source_id": 36,
+        "target_id": 42,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma"
+          ]
+        },
+        "id": 34,
+        "label": "karma:classLink",
+        "source_id": 39,
+        "target_id": 43,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma",
+            "s06-npg"
+          ]
+        },
+        "id": 35,
+        "label": "rdfs:label",
+        "source_id": 37,
+        "target_id": 44,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma"
+          ]
+        },
+        "id": 36,
+        "label": "karma:classLink",
+        "source_id": 41,
+        "target_id": 45,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma"
+          ]
+        },
+        "id": 37,
+        "label": "crm:P82b_end_of_the_end",
+        "source_id": 6,
+        "target_id": 46,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg",
+            "s05-met",
+            "s02-dma",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 38,
+        "label": "karma:classLink",
+        "source_id": 34,
+        "target_id": 47,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma",
+            "s05-met"
+          ]
+        },
+        "id": 39,
+        "label": "rdf:value",
+        "source_id": 38,
+        "target_id": 48,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s11-s-19-artists",
+            "s02-dma",
+            "s07-s-13",
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s03-ima-artists",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 40,
+        "label": "rdfs:label",
+        "source_id": 41,
+        "target_id": 49,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s12-s-19-artworks",
+            "s14-s-california-african-american",
+            "s06-npg",
+            "s05-met",
+            "s02-dma"
+          ]
+        },
+        "id": 41,
+        "label": "rdfs:label",
+        "source_id": 40,
+        "target_id": 50,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s10-s-18-artworks",
+            "s07-s-13",
+            "s13-s-art-institute-of-chicago",
+            "s12-s-19-artworks",
+            "s02-dma",
+            "s05-met",
+            "s14-s-california-african-american",
+            "s04-ima-artworks",
+            "s06-npg"
+          ]
+        },
+        "id": 42,
+        "label": "rdf:value",
+        "source_id": 39,
+        "target_id": 51,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma"
+          ]
+        },
+        "id": 43,
+        "label": "karma:classLink",
+        "source_id": 38,
+        "target_id": 52,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s13-s-art-institute-of-chicago",
+            "s14-s-california-african-american",
+            "s06-npg",
+            "s05-met",
+            "s04-ima-artworks",
+            "s07-s-13",
+            "s10-s-18-artworks",
+            "s02-dma"
+          ]
+        },
+        "id": 44,
+        "label": "rdf:value",
+        "source_id": 35,
+        "target_id": 53,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s12-s-19-artworks",
+            "s07-s-13",
+            "s02-dma",
+            "s04-ima-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s11-s-19-artists",
+            "s03-ima-artists"
+          ]
+        },
+        "id": 45,
+        "label": "crm:P107i_is_current_or_former_member_of",
+        "source_id": 4,
+        "target_id": 41,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s05-met",
+            "s02-dma"
+          ]
+        },
+        "id": 46,
+        "label": "crm:P1_is_identified_by",
+        "source_id": 1,
+        "target_id": 38,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s12-s-19-artworks",
+            "s07-s-13",
+            "s08-s-17-edited",
+            "s06-npg",
+            "s04-ima-artworks",
+            "s10-s-18-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s14-s-california-african-american",
+            "s02-dma"
+          ]
+        },
+        "id": 47,
+        "label": "crm:P102_has_title",
+        "source_id": 1,
+        "target_id": 36,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma",
+            "s06-npg",
+            "s05-met",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 48,
+        "label": "crm:P41i_was_classified_by",
+        "source_id": 1,
+        "target_id": 34,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s14-s-california-african-american",
+            "s06-npg",
+            "s05-met",
+            "s02-dma"
+          ]
+        },
+        "id": 49,
+        "label": "crm:P42_assigned",
+        "source_id": 34,
+        "target_id": 40,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg",
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s10-s-18-artworks",
+            "s05-met",
+            "s02-dma",
+            "s07-s-13",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 50,
+        "label": "crm:P1_is_identified_by",
+        "source_id": 1,
+        "target_id": 39,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg",
+            "s04-ima-artworks",
+            "s07-s-13",
+            "s10-s-18-artworks",
+            "s14-s-california-african-american",
+            "s13-s-art-institute-of-chicago",
+            "s05-met",
+            "s02-dma"
+          ]
+        },
+        "id": 51,
+        "label": "crm:P67i_is_referred_to_by",
+        "source_id": 1,
+        "target_id": 35,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s02-dma",
+            "s06-npg"
+          ]
+        },
+        "id": 52,
+        "label": "crm:P52_has_current_owner",
+        "source_id": 1,
+        "target_id": 37,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 53,
+        "label": "karma:classLink",
+        "source_id": 57,
+        "target_id": 59,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s10-s-18-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s14-s-california-african-american",
+            "s12-s-19-artworks",
+            "s08-s-17-edited",
+            "s07-s-13",
+            "s05-met",
+            "s06-npg",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 54,
+        "label": "karma:classLink",
+        "source_id": 56,
+        "target_id": 60,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s04-ima-artworks",
+            "s05-met",
+            "s06-npg"
+          ]
+        },
+        "id": 55,
+        "label": "skos:prefLabel",
+        "source_id": 58,
+        "target_id": 61,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s10-s-18-artworks",
+            "s05-met",
+            "s04-ima-artworks",
+            "s07-s-13",
+            "s06-npg"
+          ]
+        },
+        "id": 56,
+        "label": "rdf:value",
+        "source_id": 55,
+        "target_id": 62,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s05-met",
+            "s04-ima-artworks",
+            "s07-s-13"
+          ]
+        },
+        "id": 57,
+        "label": "rdf:value",
+        "source_id": 54,
+        "target_id": 63,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s04-ima-artworks",
+            "s14-s-california-african-american",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 58,
+        "label": "foaf:homepage",
+        "source_id": 1,
+        "target_id": 57,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s08-s-17-edited",
+            "s07-s-13",
+            "s12-s-19-artworks",
+            "s04-ima-artworks",
+            "s14-s-california-african-american",
+            "s13-s-art-institute-of-chicago",
+            "s10-s-18-artworks",
+            "s05-met",
+            "s06-npg"
+          ]
+        },
+        "id": 59,
+        "label": "crm:P138i_has_representation",
+        "source_id": 1,
+        "target_id": 56,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s04-ima-artworks",
+            "s05-met",
+            "s07-s-13"
+          ]
+        },
+        "id": 60,
+        "label": "crm:P67i_is_referred_to_by",
+        "source_id": 1,
+        "target_id": 54,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s07-s-13",
+            "s04-ima-artworks",
+            "s05-met",
+            "s10-s-18-artworks",
+            "s06-npg"
+          ]
+        },
+        "id": 61,
+        "label": "crm:P67i_is_referred_to_by",
+        "source_id": 1,
+        "target_id": 55,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s05-met",
+            "s04-ima-artworks",
+            "s06-npg"
+          ]
+        },
+        "id": 62,
+        "label": "dcterms:subject",
+        "source_id": 1,
+        "target_id": 58,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s05-met"
+          ]
+        },
+        "id": 63,
+        "label": "rdfs:label",
+        "source_id": 64,
+        "target_id": 65,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s05-met"
+          ]
+        },
+        "id": 64,
+        "label": "crm:P55_has_current_location",
+        "source_id": 1,
+        "target_id": 64,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 65,
+        "label": "karma:classLink",
+        "source_id": 74,
+        "target_id": 75,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 66,
+        "label": "crm:P82a_begin_of_the_begin",
+        "source_id": 70,
+        "target_id": 76,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 67,
+        "label": "crm:P82b_end_of_the_end",
+        "source_id": 70,
+        "target_id": 77,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 68,
+        "label": "karma:classLink",
+        "source_id": 67,
+        "target_id": 78,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 69,
+        "label": "rdfs:label",
+        "source_id": 70,
+        "target_id": 79,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 70,
+        "label": "karma:classLink",
+        "source_id": 71,
+        "target_id": 80,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 71,
+        "label": "crm:P82a_begin_of_the_begin",
+        "source_id": 69,
+        "target_id": 81,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 72,
+        "label": "rdfs:label",
+        "source_id": 69,
+        "target_id": 82,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 73,
+        "label": "crm:P82b_end_of_the_end",
+        "source_id": 69,
+        "target_id": 83,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 74,
+        "label": "crm:P3_has_note",
+        "source_id": 66,
+        "target_id": 84,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 75,
+        "label": "crm:P82a_begin_of_the_begin",
+        "source_id": 68,
+        "target_id": 85,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 76,
+        "label": "rdfs:label",
+        "source_id": 68,
+        "target_id": 86,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 77,
+        "label": "crm:P82b_end_of_the_end",
+        "source_id": 68,
+        "target_id": 87,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 78,
+        "label": "rdf:value",
+        "source_id": 73,
+        "target_id": 88,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 79,
+        "label": "karma:classLink",
+        "source_id": 72,
+        "target_id": 89,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 80,
+        "label": "crm:P131_is_identified_by",
+        "source_id": 4,
+        "target_id": 73,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 81,
+        "label": "crm:P104_is_subject_to",
+        "source_id": 1,
+        "target_id": 66,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 82,
+        "label": "crm:P4_has_time-span",
+        "source_id": 74,
+        "target_id": 68,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 83,
+        "label": "crm:P24i_changed_ownership_through",
+        "source_id": 1,
+        "target_id": 74,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 84,
+        "label": "crm:P4_has_time-span",
+        "source_id": 71,
+        "target_id": 7,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 85,
+        "label": "crm:P4_has_time-span",
+        "source_id": 72,
+        "target_id": 69,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 86,
+        "label": "crm:P92i_was_brought_into_existence_by",
+        "source_id": 4,
+        "target_id": 71,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 87,
+        "label": "crm:P93i_was_taken_out_of_existence_by",
+        "source_id": 4,
+        "target_id": 72,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 88,
+        "label": "crm:P4_has_time-span",
+        "source_id": 8,
+        "target_id": 70,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 89,
+        "label": "crm:P92i_was_brought_into_existence_by",
+        "source_id": 67,
+        "target_id": 8,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 90,
+        "label": "crm:P93i_was_taken_out_of_existence_by",
+        "source_id": 67,
+        "target_id": 9,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 91,
+        "label": "crm:P131_is_identified_by",
+        "source_id": 67,
+        "target_id": 10,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 92,
+        "label": "crm:P62_depicts",
+        "source_id": 1,
+        "target_id": 67,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s09-s-18-artists",
+            "s11-s-19-artists"
+          ]
+        },
+        "id": 93,
+        "label": "crm:P129i_is_subject_of",
+        "source_id": 4,
+        "target_id": 3,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 94,
+        "label": "karma:classLink",
+        "source_id": 90,
+        "target_id": 91,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 95,
+        "label": "rdfs:label",
+        "source_id": 90,
+        "target_id": 92,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 96,
+        "label": "crm:P46i_forms_part_of",
+        "source_id": 1,
+        "target_id": 90,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s11-s-19-artists"
+          ]
+        },
+        "id": 97,
+        "label": "crm:P129i_is_subject_of",
+        "source_id": 4,
+        "target_id": 2,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s12-s-19-artworks"
+          ]
+        },
+        "id": 98,
+        "label": "crm:P32_used_general_technique",
+        "source_id": 0,
+        "target_id": 40,
+        "type": 0
+      },
+      {
+        "data": {
+          "weight": 0.0,
+          "tags": [
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 99,
+        "label": "crm:P81b_begin_of_the_end",
+        "source_id": 7,
+        "target_id": 93,
+        "type": 0
+      }
+    ],
+    "name": "Integration Graph",
+    "nodes": [
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s06-npg",
+            "s05-met",
+            "s07-s-13",
+            "s12-s-19-artworks",
+            "s08-s-17-edited",
+            "s14-s-california-african-american",
+            "s01-cb",
+            "s02-dma",
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 0,
+        "label": "crm:E12_Production",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s08-s-17-edited",
+            "s06-npg",
+            "s12-s-19-artworks",
+            "s14-s-california-african-american",
+            "s07-s-13",
+            "s10-s-18-artworks",
+            "s01-cb",
+            "s02-dma",
+            "s05-met"
+          ]
+        },
+        "id": 1,
+        "label": "crm:E22_Man-Made_Object",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma",
+            "s12-s-19-artworks",
+            "s04-ima-artworks",
+            "s14-s-california-african-american",
+            "s13-s-art-institute-of-chicago",
+            "s11-s-19-artists",
+            "s05-met",
+            "s06-npg",
+            "s10-s-18-artworks",
+            "s07-s-13",
+            "s01-cb"
+          ]
+        },
+        "id": 2,
+        "label": "crm:E33_Linguistic_Object",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s09-s-18-artists",
+            "s06-npg",
+            "s04-ima-artworks",
+            "s14-s-california-african-american",
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s10-s-18-artworks",
+            "s01-cb",
+            "s11-s-19-artists",
+            "s05-met",
+            "s07-s-13",
+            "s02-dma",
+            "s08-s-17-edited"
+          ]
+        },
+        "id": 3,
+        "label": "crm:E33_Linguistic_Object",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s11-s-19-artists",
+            "s13-s-art-institute-of-chicago",
+            "s01-cb",
+            "s04-ima-artworks",
+            "s08-s-17-edited",
+            "s09-s-18-artists",
+            "s03-ima-artists",
+            "s06-npg",
+            "s07-s-13",
+            "s10-s-18-artworks",
+            "s14-s-california-african-american",
+            "s02-dma",
+            "s05-met",
+            "s12-s-19-artworks"
+          ]
+        },
+        "id": 4,
+        "label": "crm:E39_Actor",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s05-met",
+            "s01-cb",
+            "s07-s-13",
+            "s04-ima-artworks",
+            "s02-dma",
+            "s12-s-19-artworks"
+          ]
+        },
+        "id": 5,
+        "label": "crm:E52_Time-Span",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s02-dma",
+            "s07-s-13",
+            "s03-ima-artists",
+            "s09-s-18-artists",
+            "s11-s-19-artists",
+            "s13-s-art-institute-of-chicago",
+            "s01-cb",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 6,
+        "label": "crm:E52_Time-Span",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s03-ima-artists",
+            "s06-npg",
+            "s07-s-13",
+            "s11-s-19-artists",
+            "s02-dma",
+            "s09-s-18-artists",
+            "s01-cb"
+          ]
+        },
+        "id": 7,
+        "label": "crm:E52_Time-Span",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s04-ima-artworks",
+            "s07-s-13",
+            "s01-cb",
+            "s13-s-art-institute-of-chicago",
+            "s09-s-18-artists",
+            "s06-npg",
+            "s02-dma",
+            "s11-s-19-artists",
+            "s03-ima-artists"
+          ]
+        },
+        "id": 8,
+        "label": "crm:E63_Beginning_of_Existence",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s11-s-19-artists",
+            "s01-cb",
+            "s03-ima-artists",
+            "s02-dma",
+            "s04-ima-artworks",
+            "s09-s-18-artists",
+            "s13-s-art-institute-of-chicago",
+            "s07-s-13"
+          ]
+        },
+        "id": 9,
+        "label": "crm:E64_End_of_Existence",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met",
+            "s06-npg",
+            "s01-cb",
+            "s11-s-19-artists",
+            "s08-s-17-edited",
+            "s04-ima-artworks",
+            "s02-dma",
+            "s14-s-california-african-american",
+            "s13-s-art-institute-of-chicago",
+            "s03-ima-artists",
+            "s09-s-18-artists",
+            "s07-s-13",
+            "s10-s-18-artworks",
+            "s12-s-19-artworks"
+          ]
+        },
+        "id": 10,
+        "label": "crm:E82_Actor_Appellation",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s01-cb",
+            "s07-s-13",
+            "s09-s-18-artists",
+            "s02-dma",
+            "s03-ima-artists",
+            "s11-s-19-artists",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 11,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met",
+            "s02-dma",
+            "s12-s-19-artworks",
+            "s08-s-17-edited",
+            "s07-s-13",
+            "s09-s-18-artists",
+            "s11-s-19-artists",
+            "s04-ima-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s01-cb",
+            "s06-npg",
+            "s14-s-california-african-american",
+            "s10-s-18-artworks",
+            "s03-ima-artists"
+          ]
+        },
+        "id": 12,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s11-s-19-artists",
+            "s01-cb",
+            "s09-s-18-artists",
+            "s06-npg",
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s07-s-13",
+            "s03-ima-artists",
+            "s02-dma"
+          ]
+        },
+        "id": 13,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s01-cb"
+          ]
+        },
+        "id": 14,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s01-cb",
+            "s13-s-art-institute-of-chicago",
+            "s14-s-california-african-american",
+            "s02-dma",
+            "s10-s-18-artworks",
+            "s11-s-19-artists",
+            "s04-ima-artworks",
+            "s05-met",
+            "s12-s-19-artworks",
+            "s07-s-13"
+          ]
+        },
+        "id": 15,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma",
+            "s01-cb"
+          ]
+        },
+        "id": 16,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s13-s-art-institute-of-chicago",
+            "s09-s-18-artists",
+            "s05-met",
+            "s12-s-19-artworks",
+            "s14-s-california-african-american",
+            "s08-s-17-edited",
+            "s03-ima-artists",
+            "s07-s-13",
+            "s04-ima-artworks",
+            "s10-s-18-artworks",
+            "s01-cb",
+            "s11-s-19-artists",
+            "s02-dma",
+            "s06-npg"
+          ]
+        },
+        "id": 17,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma",
+            "s03-ima-artists",
+            "s11-s-19-artists",
+            "s13-s-art-institute-of-chicago",
+            "s06-npg",
+            "s09-s-18-artists",
+            "s07-s-13",
+            "s04-ima-artworks",
+            "s01-cb"
+          ]
+        },
+        "id": 18,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s07-s-13",
+            "s04-ima-artworks",
+            "s12-s-19-artworks",
+            "s06-npg",
+            "s02-dma",
+            "s01-cb",
+            "s05-met"
+          ]
+        },
+        "id": 19,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s04-ima-artworks",
+            "s01-cb",
+            "s05-met",
+            "s02-dma",
+            "s12-s-19-artworks",
+            "s07-s-13"
+          ]
+        },
+        "id": 20,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s09-s-18-artists",
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s03-ima-artists",
+            "s01-cb",
+            "s11-s-19-artists",
+            "s06-npg",
+            "s07-s-13"
+          ]
+        },
+        "id": 21,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s01-cb"
+          ]
+        },
+        "id": 22,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s12-s-19-artworks",
+            "s07-s-13",
+            "s05-met",
+            "s01-cb",
+            "s04-ima-artworks",
+            "s02-dma",
+            "s06-npg"
+          ]
+        },
+        "id": 23,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s01-cb",
+            "s02-dma"
+          ]
+        },
+        "id": 24,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s07-s-13",
+            "s13-s-art-institute-of-chicago",
+            "s09-s-18-artists",
+            "s06-npg",
+            "s01-cb",
+            "s02-dma",
+            "s11-s-19-artists",
+            "s03-ima-artists",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 25,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma",
+            "s09-s-18-artists",
+            "s07-s-13",
+            "s01-cb",
+            "s04-ima-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s11-s-19-artists",
+            "s03-ima-artists",
+            "s06-npg"
+          ]
+        },
+        "id": 26,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s01-cb",
+            "s04-ima-artworks",
+            "s10-s-18-artworks",
+            "s07-s-13",
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s02-dma",
+            "s14-s-california-african-american",
+            "s05-met",
+            "s06-npg",
+            "s08-s-17-edited"
+          ]
+        },
+        "id": 27,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s01-cb",
+            "s02-dma"
+          ]
+        },
+        "id": 28,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s01-cb",
+            "s02-dma"
+          ]
+        },
+        "id": 29,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s03-ima-artists",
+            "s02-dma",
+            "s01-cb",
+            "s04-ima-artworks",
+            "s09-s-18-artists",
+            "s11-s-19-artists",
+            "s13-s-art-institute-of-chicago",
+            "s06-npg",
+            "s07-s-13"
+          ]
+        },
+        "id": 30,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma",
+            "s03-ima-artists",
+            "s07-s-13",
+            "s01-cb",
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s09-s-18-artists",
+            "s06-npg",
+            "s11-s-19-artists"
+          ]
+        },
+        "id": 31,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s09-s-18-artists",
+            "s01-cb",
+            "s02-dma",
+            "s06-npg",
+            "s04-ima-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s11-s-19-artists",
+            "s14-s-california-african-american",
+            "s05-met",
+            "s12-s-19-artworks",
+            "s07-s-13",
+            "s08-s-17-edited",
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 32,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s01-cb",
+            "s06-npg",
+            "s08-s-17-edited",
+            "s14-s-california-african-american",
+            "s04-ima-artworks",
+            "s10-s-18-artworks",
+            "s05-met",
+            "s02-dma",
+            "s07-s-13"
+          ]
+        },
+        "id": 33,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s14-s-california-african-american",
+            "s05-met",
+            "s02-dma"
+          ]
+        },
+        "id": 34,
+        "label": "crm:E17_Type_Assignment",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s07-s-13",
+            "s10-s-18-artworks",
+            "s05-met",
+            "s02-dma",
+            "s06-npg",
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 35,
+        "label": "crm:E33_Linguistic_Object",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s04-ima-artworks",
+            "s10-s-18-artworks",
+            "s06-npg",
+            "s02-dma",
+            "s12-s-19-artworks",
+            "s08-s-17-edited",
+            "s14-s-california-african-american",
+            "s07-s-13",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 36,
+        "label": "crm:E35_Title",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s02-dma"
+          ]
+        },
+        "id": 37,
+        "label": "crm:E40_Legal_Body",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met",
+            "s02-dma"
+          ]
+        },
+        "id": 38,
+        "label": "crm:E42_Identifier",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s04-ima-artworks",
+            "s05-met",
+            "s02-dma",
+            "s07-s-13",
+            "s13-s-art-institute-of-chicago",
+            "s14-s-california-african-american",
+            "s10-s-18-artworks",
+            "s06-npg",
+            "s12-s-19-artworks"
+          ]
+        },
+        "id": 39,
+        "label": "crm:E42_Identifier",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s12-s-19-artworks",
+            "s14-s-california-african-american",
+            "s05-met",
+            "s02-dma",
+            "s06-npg"
+          ]
+        },
+        "id": 40,
+        "label": "crm:E55_Type",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s11-s-19-artists",
+            "s12-s-19-artworks",
+            "s03-ima-artists",
+            "s02-dma",
+            "s07-s-13"
+          ]
+        },
+        "id": 41,
+        "label": "crm:E74_Group",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s10-s-18-artworks",
+            "s14-s-california-african-american",
+            "s07-s-13",
+            "s02-dma",
+            "s08-s-17-edited",
+            "s04-ima-artworks",
+            "s06-npg",
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 42,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma"
+          ]
+        },
+        "id": 43,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s02-dma"
+          ]
+        },
+        "id": 44,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma"
+          ]
+        },
+        "id": 45,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma"
+          ]
+        },
+        "id": 46,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma",
+            "s05-met",
+            "s06-npg",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 47,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met",
+            "s02-dma"
+          ]
+        },
+        "id": 48,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma",
+            "s07-s-13",
+            "s13-s-art-institute-of-chicago",
+            "s04-ima-artworks",
+            "s12-s-19-artworks",
+            "s03-ima-artists",
+            "s11-s-19-artists"
+          ]
+        },
+        "id": 49,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s12-s-19-artworks",
+            "s02-dma",
+            "s05-met",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 50,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma",
+            "s05-met",
+            "s10-s-18-artworks",
+            "s04-ima-artworks",
+            "s12-s-19-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s07-s-13",
+            "s14-s-california-african-american",
+            "s06-npg"
+          ]
+        },
+        "id": 51,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s02-dma"
+          ]
+        },
+        "id": 52,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s05-met",
+            "s10-s-18-artworks",
+            "s02-dma",
+            "s04-ima-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s07-s-13",
+            "s14-s-california-african-american"
+          ]
+        },
+        "id": 53,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met",
+            "s07-s-13",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 54,
+        "label": "crm:E33_Linguistic_Object",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s04-ima-artworks",
+            "s06-npg",
+            "s05-met",
+            "s07-s-13",
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 55,
+        "label": "crm:E33_Linguistic_Object",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met",
+            "s14-s-california-african-american",
+            "s12-s-19-artworks",
+            "s10-s-18-artworks",
+            "s08-s-17-edited",
+            "s04-ima-artworks",
+            "s06-npg",
+            "s07-s-13",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 56,
+        "label": "crm:E38_Image",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s04-ima-artworks",
+            "s14-s-california-african-american",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 57,
+        "label": "foaf:Document",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met",
+            "s04-ima-artworks",
+            "s06-npg"
+          ]
+        },
+        "id": 58,
+        "label": "skos:Concept",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s04-ima-artworks",
+            "s14-s-california-african-american",
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 59,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s10-s-18-artworks",
+            "s13-s-art-institute-of-chicago",
+            "s06-npg",
+            "s08-s-17-edited",
+            "s12-s-19-artworks",
+            "s07-s-13",
+            "s14-s-california-african-american",
+            "s05-met",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 60,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s05-met",
+            "s04-ima-artworks"
+          ]
+        },
+        "id": 61,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg",
+            "s07-s-13",
+            "s05-met",
+            "s04-ima-artworks",
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 62,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s07-s-13",
+            "s04-ima-artworks",
+            "s05-met"
+          ]
+        },
+        "id": 63,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met"
+          ]
+        },
+        "id": 64,
+        "label": "crm:E53_Place",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s05-met"
+          ]
+        },
+        "id": 65,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 66,
+        "label": "crm:E30_Right",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 67,
+        "label": "crm:E39_Actor",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 68,
+        "label": "crm:E52_Time-Span",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 69,
+        "label": "crm:E52_Time-Span",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 70,
+        "label": "crm:E52_Time-Span",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 71,
+        "label": "crm:E63_Beginning_of_Existence",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 72,
+        "label": "crm:E64_End_of_Existence",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 73,
+        "label": "crm:E82_Actor_Appellation",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 74,
+        "label": "crm:E8_Acquisition",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 75,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 76,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 77,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 78,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 79,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 80,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 81,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 82,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 83,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 84,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 85,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 86,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 87,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 88,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s06-npg"
+          ]
+        },
+        "id": 89,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 90,
+        "label": "crm:E78_Collection",
+        "type": 1
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 91,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s10-s-18-artworks"
+          ]
+        },
+        "id": 92,
+        "label": "DATA_NODE",
+        "type": 2
+      },
+      {
+        "data": {
+          "original_names": {},
+          "original_ids": {},
+          "tags": [
+            "s13-s-art-institute-of-chicago"
+          ]
+        },
+        "id": 93,
+        "label": "DATA_NODE",
+        "type": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix dc:         <http://purl.org/dc/elements/1.1/> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix karma:      <http://isi.edu/integration/karma/dev#> .
+
+<> a owl:Ontology ;
+	rdfs:label "Ontology used in ISI Web-Karma"@en ;
+	dc:date "2017-09-10" .
+
+karma:classLink a owl:DatatypeProperty;
+    rdfs:label "classLink"@en-us ;
+	rdfs:range rdfs:Literal .
+
+

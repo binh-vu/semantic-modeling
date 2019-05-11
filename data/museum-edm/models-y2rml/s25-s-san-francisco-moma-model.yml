@@ -1,0 +1,135 @@
+commands:
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: art-work|birthYear
+    node_id: aac-ont:Person1
+    type: ElementsGr2:dateOfBirth
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: art-work|accession-id
+    node_id: aac-ont:CulturalHeritageObject1
+    type: aac-ont:accessionNumber
+-   _type_: SetSemanticType
+    domain: edm:WebResource
+    input_attr_path: art-work|image-URL
+    node_id: edm:WebResource1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: art-work|copyright
+    node_id: aac-ont:CulturalHeritageObject1
+    type: dcterms:rightsHolder
+-   _type_: SetSemanticType
+    domain: skos:Concept
+    input_attr_path: art-work|type
+    node_id: skos:Concept1
+    type: skos:prefLabel
+-   _type_: SetSemanticType
+    domain: foaf:Document
+    input_attr_path: art-work|url
+    node_id: foaf:Document1
+    type: karma:classLink
+-   _type_: SetInternalLink
+    link_lbl: foaf:page
+    source_id: aac-ont:CulturalHeritageObject1
+    source_uri: aac-ont:CulturalHeritageObject
+    target_id: foaf:Document1
+    target_uri: null
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: art-work|title
+    node_id: aac-ont:CulturalHeritageObject1
+    type: dcterms:title
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: art-work|nationality
+    node_id: aac-ont:Person1
+    type: ElementsGr2:countryAssociatedWithThePerson
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: art-work|dimensions
+    node_id: aac-ont:CulturalHeritageObject1
+    type: dcterms:extent
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: art-work|artistName
+    node_id: aac-ont:Person1
+    type: ElementsGr2:nameOfThePerson
+-   _type_: SetSemanticType
+    domain: aac-ont:CulturalHeritageObject
+    input_attr_path: art-work|credit
+    node_id: aac-ont:CulturalHeritageObject1
+    type: dcterms:provenance
+-   _type_: SetSemanticType
+    domain: aac-ont:Person
+    input_attr_path: art-work|deathYear
+    node_id: aac-ont:Person1
+    type: ElementsGr2:dateOfDeath
+-   _type_: SetInternalLink
+    link_lbl: ElementsGr2:placeOfBirth
+    source_id: aac-ont:Person1
+    source_uri: aac-ont:Person
+    target_id: aac-ont:Place1
+    target_uri: aac-ont:Place
+-   _type_: SetInternalLink
+    link_lbl: dcterms:creator
+    source_id: aac-ont:CulturalHeritageObject1
+    source_uri: aac-ont:CulturalHeritageObject
+    target_id: aac-ont:Person1
+    target_uri: aac-ont:Person
+-   _type_: SetInternalLink
+    link_lbl: edm:aggregatedCHO
+    source_id: edm:EuropeanaAggregation1
+    source_uri: edm:EuropeanaAggregation
+    target_id: aac-ont:CulturalHeritageObject1
+    target_uri: aac-ont:CulturalHeritageObject
+-   _type_: SetInternalLink
+    link_lbl: ElementsGr2:placeOfDeath
+    source_id: aac-ont:Person1
+    source_uri: aac-ont:Person
+    target_id: aac-ont:Place2
+    target_uri: aac-ont:Place
+-   _type_: SetInternalLink
+    link_lbl: edm:hasView
+    source_id: edm:EuropeanaAggregation1
+    source_uri: edm:EuropeanaAggregation
+    target_id: edm:WebResource1
+    target_uri: edm:WebResource
+-   _type_: SetInternalLink
+    link_lbl: edm:hasType
+    source_id: aac-ont:CulturalHeritageObject1
+    source_uri: aac-ont:CulturalHeritageObject
+    target_id: skos:Concept1
+    target_uri: null
+-   _type_: PyTransformNewColumn
+    code: "if (getValue(\"art-work|birthPlaceCity\")) : \n    if (getValue(\"art-work|birthPlaceState\"\
+        )) :\n        label = getValue(\"art-work|birthPlaceState\") + \",\" + getValue(\"\
+        art-work|birthPlaceCity\")\n    else : label = getValue(\"art-work|birthPlaceCity\"\
+        )\nelse :\n    label = getValue(\"art-work|birthPlaceState\")\n\n__return__\
+        \ = label"
+    default_error_value: ''
+    input_attr_paths:
+    - art-work|birthPlaceState
+    - art-work|birthPlaceCity
+    new_attr_name: birthPlaceLabel
+-   _type_: SetSemanticType
+    domain: aac-ont:Place
+    input_attr_path: art-work|birthPlaceLabel
+    node_id: aac-ont:Place1
+    type: rdfs:label
+-   _type_: PyTransformNewColumn
+    code: "if (getValue(\"art-work|deathPlaceCity\")) : \n    if (getValue(\"art-work|deathPlaceState\"\
+        )) :\n        label = getValue(\"art-work|deathPlaceState\") + \",\" + getValue(\"\
+        art-work|deathPlaceCity\")\n    else : label = getValue(\"art-work|deathPlaceCity\"\
+        )\nelse :\n    label = getValue(\"art-work|deathPlaceState\")\n\n__return__\
+        \ = label"
+    default_error_value: ''
+    input_attr_paths:
+    - art-work|deathPlaceState
+    - art-work|deathPlaceCity
+    new_attr_name: deathPlaceLabel
+-   _type_: SetSemanticType
+    domain: aac-ont:Place
+    input_attr_path: art-work|deathPlaceLabel
+    node_id: aac-ont:Place2
+    type: rdfs:label

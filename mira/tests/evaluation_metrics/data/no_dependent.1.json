@@ -1,0 +1,85 @@
+{
+  "comment": "Simplest case, no dependent",
+  "gold_sm": {
+    "name": "Gold SM",
+    "index_node_type": true,
+    "index_node_label": true,
+    "nodes": [
+      {
+        "id": 0,
+        "type": 1,
+        "label": "Artwork"
+      },
+      {
+        "id": 1,
+        "type": 2,
+        "label": "artwork_title"
+      },
+      {
+        "id": 2,
+        "type": 2,
+        "label": "copyright"
+      }
+    ],
+    "links": [
+      {
+        "id": 0,
+        "type": 0,
+        "source_id": 0,
+        "target_id": 1,
+        "label": "title"
+      },
+      {
+        "id": 1,
+        "type": 0,
+        "source_id": 0,
+        "target_id": 2,
+        "label": "provenance"
+      }
+    ]
+  },
+  "pred_sm": {
+    "name": "Pred SM",
+    "index_node_type": true,
+    "index_node_label": true,
+    "nodes": [
+      {
+        "id": 0,
+        "type": 1,
+        "label": "Artwork"
+      },
+      {
+        "id": 1,
+        "type": 2,
+        "label": "copyright"
+      },
+      {
+        "id": 2,
+        "type": 2,
+        "label": "artwork_title"
+      }
+    ],
+    "links": [
+      {
+        "id": 0,
+        "type": 0,
+        "source_id": 0,
+        "target_id": 2,
+        "label": "title"
+      },
+      {
+        "id": 1,
+        "type": 0,
+        "source_id": 0,
+        "target_id": 1,
+        "label": "provenance"
+      }
+    ]
+  },
+  "data_node_mode": "NoTouch",
+  "f1_precision_recall": [1.0, 1.0, 1.0],
+  "bijection": {
+    "prime2x": [0, 2, 1],
+    "x2prime": [0, 2, 1]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "index_link_label": false,
+  "index_node_label": true,
+  "index_node_type": true,
+  "links": [],
+  "name": "",
+  "nodes": [
+    {
+      "id": 0,
+      "label": "Championnat",
+      "type": 2
+    }
+  ]
+}

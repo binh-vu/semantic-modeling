@@ -1,0 +1,8 @@
+- name: install prerequisite packages
+  apt:
+    name: "{{ packages }}"
+    update_cache: yes
+  become: yes
+  vars:
+      packages:
+      - libgl1-mesa-dev

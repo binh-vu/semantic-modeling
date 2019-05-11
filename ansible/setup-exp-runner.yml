@@ -1,0 +1,37 @@
+---
+- hosts: exp-workers
+  tasks:
+  - name: clone repo
+    git:
+      repo: git@github.com:sizxy3462g5829bz/d8jJ28s8uEZU.git
+      dest: /workspace/DataIntegration/semantic-modeling
+  - name: install requirements
+    shell: /workspace/anaconda3/bin/pip install -r requirements.txt
+    args:
+      chdir: /workspace/DataIntegration/semantic-modeling
+  - name: clear build folder of ctensor
+    file:
+      path: /workspace/DataIntegration/semantic-modeling/gmtk/ctensor/build
+      state: absent
+  - name: re-build ctensor
+    shell: >
+      export ANACONDA_HOME=/workspace/anaconda3 &&
+      mkdir build &&
+      cd build &&
+      cmake .. &&
+      make &&
+      sudo cp libctensor.* /usr/local/lib
+    args:
+      warn: false
+      chdir: /workspace/DataIntegration/semantic-modeling/gmtk/ctensor
+  - name: re-build pysm
+    shell: >
+      OS=linux ENV=prod /workspace/anaconda3/bin/python setup.py build_ext --inplace
+    args:
+      chdir: /workspace/DataIntegration/semantic-modeling/pysm
+  - name: add ld_library_path
+    shell: >
+      echo export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH >> "{{ ansible_env.HOME }}/.bashrc" &&
+      touch "{{ ansible_env.HOME }}/.ansible/libctensor_ldpath.installed"
+    args:
+      creates: "{{ ansible_env.HOME }}/.ansible/libctensor_ldpath.installed"

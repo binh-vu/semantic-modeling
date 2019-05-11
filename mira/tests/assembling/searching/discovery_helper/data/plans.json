@@ -1,0 +1,1100 @@
+[
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:name",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:name",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 2,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 0,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:name",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:ranking",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 2,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 0,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:tag",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:tag",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 2,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 0,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:tag",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:playPosition",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 2,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 0,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:tag",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:name",
+          "source_id": 1,
+          "target_id": 3,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 3,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 1,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:tag",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:ranking",
+          "source_id": 1,
+          "target_id": 3,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 3,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 1,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:name",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:tag",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 2,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 0,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:name",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:playPosition",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 2,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 0,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:name",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:name",
+          "source_id": 1,
+          "target_id": 3,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 3,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 1,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:name",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:ranking",
+          "source_id": 1,
+          "target_id": 3,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 3,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 1,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:playPosition",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:tag",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 2,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 0,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:playPosition",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:playPosition",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 2,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 0,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:playPosition",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:name",
+          "source_id": 1,
+          "target_id": 3,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 3,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 1,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:playPosition",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:ranking",
+          "source_id": 1,
+          "target_id": 3,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 3,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 0,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 1,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:name",
+          "source_id": 1,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:tag",
+          "source_id": 0,
+          "target_id": 3,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 3,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 1,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:name",
+          "source_id": 1,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:playPosition",
+          "source_id": 0,
+          "target_id": 3,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 3,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 1,
+      "source_id": 1,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 0,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:name",
+          "source_id": 1,
+          "target_id": 3,
+          "type": 0
+        },
+        {
+          "id": 3,
+          "label": "schema:name",
+          "source_id": 2,
+          "target_id": 4,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 3,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 4,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 1,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 3,
+      "source_id": 2,
+      "target_id": 0
+    }
+  },
+  {
+    "int_tree": {
+      "index_link_label": false,
+      "index_node_label": false,
+      "index_node_type": false,
+      "links": [
+        {
+          "id": 0,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 1,
+          "type": 0
+        },
+        {
+          "id": 1,
+          "label": "schema:inNationalTeam",
+          "source_id": 0,
+          "target_id": 2,
+          "type": 0
+        },
+        {
+          "id": 2,
+          "label": "schema:name",
+          "source_id": 1,
+          "target_id": 3,
+          "type": 0
+        },
+        {
+          "id": 3,
+          "label": "schema:ranking",
+          "source_id": 2,
+          "target_id": 4,
+          "type": 0
+        }
+      ],
+      "name": "",
+      "nodes": [
+        {
+          "id": 0,
+          "label": "schema:Player",
+          "type": 1
+        },
+        {
+          "id": 1,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 2,
+          "label": "schema:SportsTeam",
+          "type": 1
+        },
+        {
+          "id": 3,
+          "label": "Classement FIFA",
+          "type": 2
+        },
+        {
+          "id": 4,
+          "label": "Championnat",
+          "type": 2
+        }
+      ]
+    },
+    "int_a": {
+      "is_incoming_edge": true,
+      "edge_id": 2,
+      "source_id": 1,
+      "target_id": 0
+    },
+    "int_b": {
+      "is_incoming_edge": true,
+      "edge_id": 3,
+      "source_id": 2,
+      "target_id": 0
+    }
+  }
+]

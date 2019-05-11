@@ -1,0 +1,6 @@
+version: '2'
+services:
+    karma:
+        container_name: mohsen-jws2015
+        build: .
+        image: isi/mohsen_jws2015

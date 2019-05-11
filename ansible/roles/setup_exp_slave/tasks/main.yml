@@ -1,0 +1,41 @@
+- import_tasks: redhat.yml
+  when: ansible_os_family|lower == 'redhat'
+- import_tasks: debian.yml
+  when: ansible_os_family|lower == 'debian'
+- name: install rust
+  shell: curl https://sh.rustup.rs -sSf > install_rust_script.sh && sh install_rust_script.sh -y && rm install_rust_script.sh && touch "{{ ansible_env.HOME }}/.ansible/rust.installed"
+  args:
+    warn: no
+    creates: "{{ ansible_env.HOME }}/.ansible/rust.installed"
+- name: copy setup scripts
+  copy:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "/workspace/downloads/{{ item }}"
+  with_items:
+    - x00_install_pytorch.sh
+    - x01_install_sparsehash.sh
+    - x02_install_boost.sh
+- name: setup pytorch
+  shell: >
+    export PATH="{{ ANACONDA_PATH }}" &&
+    export ANACONDA_HOME="{{ ANACONDA_HOME }}" &&
+    ENABLE_CUDA=0 bash /workspace/downloads/x00_install_pytorch.sh && 
+    touch "{{ ansible_env.HOME }}/.ansible/pytorch.installed"
+  args:
+    creates: "{{ ansible_env.HOME }}/.ansible/pytorch.installed"
+- name: setup sparsehash
+  shell: >
+    export PATH="{{ ANACONDA_PATH }}" &&
+    export ANACONDA_HOME="{{ ANACONDA_HOME }}" &&
+    bash /workspace/downloads/x01_install_sparsehash.sh && 
+    touch "{{ ansible_env.HOME }}/.ansible/sparsehash.installed"
+  args:
+    creates: "{{ ansible_env.HOME }}/.ansible/sparsehash.installed"
+- name: setup boost
+  shell: >
+    export PATH="{{ ANACONDA_PATH }}" &&
+    export ANACONDA_HOME="{{ ANACONDA_HOME }}" &&
+    bash /workspace/downloads/x02_install_boost.sh && 
+    touch "{{ ansible_env.HOME }}/.ansible/boost.installed"
+  args:
+    creates: "{{ ansible_env.HOME }}/.ansible/boost.installed"

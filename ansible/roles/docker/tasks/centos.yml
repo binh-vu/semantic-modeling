@@ -1,0 +1,35 @@
+- name: install common packages
+  yum:
+    name: "{{ packages }}"
+    update_cache: yes
+  become: yes
+  vars:
+      packages:
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+- name: setup docker official GPG key
+  become: yes
+  shell: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && touch "{{ ansible_env.HOME }}/.ansible/docker_repo.added"
+  args:
+    creates: "{{ ansible_env.HOME }}/.ansible/docker_repo.added"
+- name: install docker ce
+  become: yes
+  yum:
+    name: docker-ce
+    update_cache: yes
+- name: start docker
+  become: yes
+  service:
+    name: docker
+    state: started
+- name: create docker group
+  group:
+    name: docker
+    state: present
+- name: add user to docker group
+  become: yes
+  user:
+    name: "{{ ansible_env.USER }}"
+    groups: docker
+    append: yes

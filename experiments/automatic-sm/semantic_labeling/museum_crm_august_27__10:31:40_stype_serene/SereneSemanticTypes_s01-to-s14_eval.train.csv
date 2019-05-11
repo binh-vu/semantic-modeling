@@ -1,0 +1,16 @@
+source,mrr,accuracy,coverage
+s01-cb,1.0,1.0,1.0
+s02-dma,1.0,1.0,1.0
+s03-ima-artists,1.0,1.0,1.0
+s04-ima-artworks,1.0,1.0,1.0
+s05-met,1.0,1.0,1.0
+s06-npg,1.0,1.0,1.0
+s07-s-13,1.0,1.0,1.0
+s08-s-17-edited,1.0,1.0,1.0
+s09-s-18-artists,1.0,1.0,1.0
+s10-s-18-artworks,1.0,1.0,1.0
+s11-s-19-artists,1.0,1.0,1.0
+s12-s-19-artworks,1.0,1.0,1.0
+s13-s-art-institute-of-chicago,1.0,1.0,1.0
+s14-s-california-african-american,1.0,1.0,1.0
+average,1.0,1.0,1.0

@@ -1,0 +1,16 @@
+source,mrr,accuracy,coverage
+s08-s-17-edited,1.0,1.0,1.0
+s09-s-18-artists,1.0,1.0,1.0
+s10-s-18-artworks,1.0,1.0,1.0
+s11-s-19-artists,1.0,1.0,1.0
+s12-s-19-artworks,1.0,1.0,1.0
+s13-s-art-institute-of-chicago,1.0,1.0,1.0
+s14-s-california-african-american,1.0,1.0,1.0
+s15-s-detroit-institute-of-art,1.0,1.0,1.0
+s16-s-hammer,0.9090909090909091,0.9090909090909091,0.9090909090909091
+s17-s-houston-museum-of-fine-arts,1.0,1.0,1.0
+s18-s-indianapolis-artists,1.0,1.0,1.0
+s19-s-indianapolis-artworks,1.0,1.0,1.0
+s20-s-lacma,1.0,1.0,1.0
+s21-s-met,1.0,1.0,1.0
+average,0.9935064935064934,0.9935064935064934,0.9935064935064934

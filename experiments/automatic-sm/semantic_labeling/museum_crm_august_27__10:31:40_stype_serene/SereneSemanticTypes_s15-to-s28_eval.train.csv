@@ -1,0 +1,16 @@
+source,mrr,accuracy,coverage
+s15-s-detroit-institute-of-art,1.0,1.0,1.0
+s16-s-hammer,0.9090909090909091,0.9090909090909091,0.9090909090909091
+s17-s-houston-museum-of-fine-arts,1.0,1.0,1.0
+s18-s-indianapolis-artists,1.0,1.0,1.0
+s19-s-indianapolis-artworks,1.0,1.0,1.0
+s20-s-lacma,1.0,1.0,1.0
+s21-s-met,1.0,1.0,1.0
+s22-s-moca,1.0,1.0,1.0
+s23-s-norton-simon,1.0,1.0,1.0
+s24-s-oakland-museum-paintings,1.0,1.0,1.0
+s25-s-san-francisco-moma,1.0,1.0,1.0
+s26-s-the-huntington,1.0,1.0,1.0
+s27-wildlife-art,1.0,1.0,1.0
+s28-gilcrease,1.0,1.0,1.0
+average,0.9935064935064936,0.9935064935064936,0.9935064935064936

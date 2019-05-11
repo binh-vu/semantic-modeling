@@ -1,0 +1,27 @@
+- name: setup resilio pgp public key
+  become: yes
+  become_method: sudo
+  apt_key:
+    url: https://linux-packages.resilio.com/resilio-sync/key.asc
+    state: present
+- name: setup resilio repository
+  become: yes
+  apt_repository:
+    repo: "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free"
+    state: present
+- name: install resilio
+  become: yes
+  become_method: sudo
+  apt:
+    name: resilio-sync
+    update_cache: yes
+- name: copy config
+  become: yes
+  copy:
+    src: "{{ role_path }}/files/config.json"
+    dest: /etc/resilio-sync/config.json
+- name: start service resilio if not running
+  become: yes
+  service:
+    name: resilio-sync
+    state: started

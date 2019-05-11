@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic model browser</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <style>
+    body, html { height: 100%; font-family: "Abyssinica SIL" }
+
+    .full-height { height: 100% }
+    .full-width { width: 100% }
+
+    .margin-top-5 { margin-top: 5px; }
+    .margin-bottom-5 { margin-bottom: 5px; }
+
+    #read-me { border: solid .2rem #868e96; padding: 10px; }
+    #read-me header { display: inline-block; position: absolute; top: -15px; left: 25px; font-weight: bold; background: white; padding: 0 5px; }
+    #query-result-list li.list-group-item { cursor: pointer; }
+    .typeahead.dropdown-menu li.active { background-color: aliceblue; }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/alrusdi/jquery-plugin-query-object/master/jquery.query-object.js" type="text/javascript"></script>
+  <script src="https://cdn.rawgit.com/elevateweb/elevatezoom/master/jquery.elevateZoom-3.0.8.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    // define global variables
+    // path to modelJSON folder in KarmaHome
+    var baseDirectory = window.location.pathname.substring(0, window.location.pathname.lastIndexOf("/"));
+    var modelJSON = baseDirectory + "/karma-version/models-json/";
+    // list of karma semantic models
+    var models = [];
+    // list of default namespaces;
+    var namespaces = {
+      "crm": "http://www.cidoc-crm.org/cidoc-crm/",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "skos": "http://www.w3.org/2008/05/skos#",
+      "karma": "http://isi.edu/integration/karma/dev#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "aac-ont": "http://www.americanartcollaborative.org/ontology/",
+      "dcterms": "http://purl.org/dc/terms/",
+      "edm": "http://www.europeana.eu/schemas/edm/",
+      "ElementsGr2": "http://rdvocab.info/ElementsGr2/",
+      "schema": "http://schema.org/"
+    };
+    // data model for the UI
+    var GUIData = {
+      modelNames: [],
+      displayingModelIdx: null,
+      fileType: 'png',
+
+      updateModels: function (modelNames) {
+        this.modelNames = modelNames;
+        this.displayingModelIdx = modelNames.length > 0 ? 0 : null;
+        this.render();
+      },
+
+      updateFileType: function (fileType) {
+        this.fileType = fileType;
+        this.render();
+      },
+
+      nextResult: function () {
+        if (this.displayingModelIdx < this.modelNames.length - 1) {
+          this.displayingModelIdx++;
+          this.render();
+        }
+      },
+
+      prevResult: function () {
+        if (this.displayingModelIdx > 0) {
+            this.displayingModelIdx--;
+            this.render();
+        }
+      },
+
+      viewResult: function (i) {
+        if (i < 0 || i > this.modelNames.length - 1) {
+          throwException("Should not happened. Bug in the code");
+          return;
+        }
+        this.displayingModelIdx = i;
+        this.render();
+      },
+
+      setUpImgMagnifier: function (cssSelectorPath) {
+        // Setup magnifier for image model
+        $(cssSelectorPath).removeData("elevateZoom");
+        $(cssSelectorPath).removeData('zoomImage');
+        $('.zoomWrapper img.zoomed').unwrap();
+        $(".zoomContainer").remove();
+        $(cssSelectorPath).elevateZoom({
+          responsive: false,
+          scrollZoom : true,
+          zoomWindowPosition: 6,
+          zoomWindowOffety: 10,
+          zoomWindowWidth: window.innerWidth - 300
+        });
+
+        // TODO: this library is full of bugs, sometime it doesn't set top of magnifier correctly (zoomWindowPosition != 6, do it for them
+        var setZoomWindowPosition = function () {
+          var imgHeight = $(cssSelectorPath).height();
+          if (imgHeight == 0) {
+            setTimeout(setZoomWindowPosition, 100);
+          } else {
+            var cssTop = $("div.zoomWindowContainer > div").css('top');
+            if (cssTop == "0px" || cssTop == "auto") {
+              // do set zoomWindowPosition here
+              console.log('set zoomWindowPos');
+              $("div.zoomWindowContainer > div").css('top', imgHeight + 10);
+            }
+          }
+        };
+
+        setTimeout(setZoomWindowPosition, 100);
+      },
+
+      render: function () {
+        var query_result_list_el = $("#query-result-list");
+
+        query_result_list_el.empty();
+
+        if (this.modelNames.length === 0) {
+          query_result_list_el.append($("<li class='list-group-item'>No result</li>"));
+        }
+
+        // doesn't need else clause because of for-loop effect
+        for (var i = 0; i < this.modelNames.length; i++) {
+          var name = this.modelNames[i];
+          if (i === this.displayingModelIdx) {
+            query_result_list_el.append($("<li class='list-group-item active'>" + name + "</li>"));
+          } else {
+            query_result_list_el.append($("<li class='list-group-item' onclick='GUIData.viewResult(" + i + ")'>" + name + "</li>"));
+          }
+        }
+
+        if (this.displayingModelIdx !== null) {
+          var modelName = this.modelNames[this.displayingModelIdx];
+          var modelURL = baseDirectory + '/models-viz/' + modelName + '.' + this.fileType;
+          var model_viewer_el = $("#model-viewer");
+          $(".current-source", model_viewer_el)
+            .html(modelName + " (" + (this.displayingModelIdx + 1) + "/" + this.modelNames.length + ")")
+            .data('source-name', modelName);
+
+          if (this.fileType === 'pdf') {
+            $("#viewer", model_viewer_el).html('<embed src="' + modelURL + '" width="100%" height="100%" type="application/pdf" />')
+          } else if (this.fileType === 'png') {
+            $("#viewer", model_viewer_el).html('<img id="sm_img" class="img-thumbnail" src="' + modelURL + '" alt="No image"/>')
+            this.setUpImgMagnifier("#sm_img");
+          } else if (this.fileType === 'text') {
+            // only display matched triples
+            if ($('#triple-pattern').val().trim() !== "") {
+              var model = window.models.filter(function (m) { return m.id === modelName; })[0];
+              var triple = $("#triple-pattern").val().split("---").map(function (e) { return e === '*' ? e : fullURI(e); });
+              var matchedTriples = [];
+
+              for (var link of model.links) {
+                var source_label_uri = model.nodes[model.node_index[link.source_id]].label.uri;
+                var target_label_uri = model.nodes[model.node_index[link.target_id]].label.uri;
+
+                if (compareQueryURI(source_label_uri, triple[0]) && compareQueryURI(link.label.uri, triple[1]) && compareQueryURI(target_label_uri, triple[2])) {
+                  var source = model.node_index[link.source_id] + ":" + shortenURI(source_label_uri),
+                      predicate = model.link_index[link.id] + ":" + shortenURI(link.label.uri),
+                      target = model.node_index[link.target_id] + ":" + shortenURI(target_label_uri);
+
+                  matchedTriples.push([source, predicate, target]);
+                }
+              }
+
+              var html = "";
+              for (var matchedTriple of matchedTriples) {
+                html += "<li><strong>({subj})</strong> --- <strong>({pred})</strong> --- <strong>({obj})</strong></li>"
+                  .replace("{subj}", matchedTriple[0]).replace("{pred}", matchedTriple[1]).replace("{obj}", matchedTriple[2]);
+              }
+              $("#viewer", model_viewer_el).html("<ul>" + html + "</ul>");
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-sm-12">
+        <div id="read-me">
+          <header>Read me</header>
+          <div class="collapse">
+            <h5>Default namespaces</h5>
+            <ul class="namespaces"></ul>
+            <h5>Usage</h5>
+            <p>Place this html file inside any folder which has similar structure like KarmaHome. It will read json model from <strong>"models-json"</strong>, and visualized model (pdf, png, etc) from <strong>"models-viz"</strong> directory.</p>
+            <p>To start, inside script directory run: <code>python -m http.server</code> to start the webserver. After that, access to this gui via: <code>http://localhost:8000/semantic_model_viewer.html</code></p>
+            <p>The list of default namespace is hardcoded inside this file. You can modify it to suit your need. For debugging, checkout the dev console (information usually put there via <code>console.trace</code> method)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row margin-top-5">
+      <div class="col-sm-8">
+        <form onsubmit="return false;">
+          <div class="form-group row">
+            <label for="triple-pattern" class="col-sm-2 col-form-label">Triple pattern</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="triple-pattern" placeholder="Enter triple in format: <subject>(---<link>---<object>){0,6}. Using * to match all value">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="name-assistant" class="col-sm-2 col-form-label">Name assistant</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control typeahead" id="name-assistant" placeholder="Enter any name & hit enter to auto complete">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button class="btn btn-primary" onclick="queryTriplePattern($('#triple-pattern').val())">Query</button>
+              <button class="btn btn-secondary" onclick="$('#triple-pattern').val('');">Clear query</button>
+              <button class="btn btn-secondary" onclick="var query = $('#triple-pattern').val(); if (query.lastIndexOf('---') === -1) $('#triple-pattern').val(''); else $('#triple-pattern').val(query.substring(0, query.lastIndexOf('---')));">Remove last object</button>
+              <button class="btn btn-success" onclick="$('#read-me .collapse').toggle()">README</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <ul class="list-group" style="height: 200px; overflow-y: scroll;" id="query-result-list"></ul>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid full-height" id="model-viewer">
+    <div class="row margin-top-5" style="background-color: #f8f9fa; padding-top: 8px; box-shadow: 1px 1px 5px #888888;">
+      <div class="col-sm-12">
+        <div style="float: left; position: absolute;">
+          <button type="button" class="btn btn-light current-source" style="font-weight: bold" onclick="copyToClipboard($(event.target).data('source-name'))"></button>
+        </div>
+        <div class="control-panel" style="text-align: center;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="GUIData.prevResult()" style="margin-bottom: 7px"><strong>prev</strong></button>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-warning" onclick="GUIData.updateFileType('pdf')">
+              <input type="radio" name="options" autocomplete="off">PDF
+            </label>
+            <label class="btn btn-danger active" onclick="GUIData.updateFileType('png')">
+              <input type="radio" name="options" autocomplete="off" checked>PNG
+            </label>
+            <label class="btn btn-info" onclick="GUIData.updateFileType('text')">
+              <input type="radio" name="options" autocomplete="off">Triples
+            </label>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="GUIData.nextResult()" style="margin-bottom: 7px"><strong>next</strong></button>
+        </div>
+      </div>
+    </div>
+    <div class="row full-height">
+      <div class="col-sm-12 full-height margin-top-5" id="viewer" style="overflow-x: scroll">
+        <!-- CONTENT GOES TO HERE -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-dark margin-top-5 margin-bottom-5 full-width" onclick="window.scrollTo(0, 0);"><strong>Up</strong></button>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/bassjobsen/Bootstrap-3-Typeahead/master/bootstrap3-typeahead.min.js"></script>
+
+  <script>
+    function loadJSONModels(dirPath) {
+      return $.get(dirPath).then(function (html) {
+          var files = [];
+          for (var el of $(html).toArray()) {
+            if (el.nodeName === "UL") {
+              for (var a of $("li > a ", el).toArray()) {
+                files.push(dirPath + a.innerText);
+              }
+            }
+          }
+
+          var models = [];
+          for (var file of files) {
+            if (file[file.lastIndexOf("/") + 1] === ".") {
+              console.log("Ignore file", file);
+              continue;
+            } else {
+              console.log("Load file", file);
+            }
+
+            models.push($.get(file).then(function (res) { return res; }));
+          }
+          return $.when.apply($, models);
+        }).then(function () {
+          var rawModels = arguments;
+          for (var rawModel of rawModels) {
+            // create a mapping from label uri => list of possible id
+            var graph = rawModel.graph;
+            graph.id = rawModel.id;
+            graph.node_label_uri_index = {};
+            graph.link_label_uri_index = {};
+            graph.node_index = {};
+            graph.link_index = {};
+            graph.node_outgoing_links = {};
+            graph.node_incoming_links = {};
+
+            for (var i = 0; i < graph.nodes.length; i++) {
+              var node = graph.nodes[i];
+              if (!graph.node_label_uri_index[node.label.uri]) {
+                graph.node_label_uri_index[node.label.uri] = [];
+              }
+              graph.node_label_uri_index[node.label.uri].push(i);
+              graph.node_index[node.id] = i;
+              graph.node_outgoing_links[node.id] = [];
+              graph.node_incoming_links[node.id] = [];
+            }
+
+            for (i = 0; i < graph.links.length; i++) {
+              var link = graph.links[i];
+              if (!graph.link_label_uri_index[link.label.uri]) {
+                graph.link_label_uri_index[link.label.uri] = [];
+              }
+              graph.link_label_uri_index[link.label.uri].push(i);
+              graph.link_index[link.id] = i;
+              // update link to include source_id & target_id
+              link.source_id = link.id.split("---")[0];
+              link.target_id = link.id.split("---")[2];
+
+              graph.node_incoming_links[link.target_id].push(link.id);
+              graph.node_outgoing_links[link.source_id].push(link.id);
+            }
+            window.models.push(graph);
+          }
+        });
+    }
+
+    function makeReadMe() {
+      // make read me section
+      var namespaces_el = $("#read-me ul.namespaces");
+
+      for (var prefix in window.namespaces) {
+        var li = $("<li><strong>" + prefix + "</strong>: &lt;" + window.namespaces[prefix] + "&gt;</li>");
+        namespaces_el.append(li);
+      }
+    }
+
+    function makeTypeAHead() {
+      var $input = $("#name-assistant");
+      var labels = new Set();
+      for (var model of window.models) {
+        Object.keys(model.node_label_uri_index).forEach(function (e) { if (e.startsWith('http')) labels.add(e); });
+        Object.keys(model.link_label_uri_index).forEach(function (e) { if (e.startsWith('http')) labels.add(e); });
+      }
+
+      labels = Array.from(labels).map(function (label) { return shortenURI(label); });
+
+      $input.typeahead({
+        source: Array.from(labels),
+        autoSelect: true
+      });
+      $input.keydown(function (e) {
+        if (e.keyCode === 13) {
+          return false;
+        }
+      });
+      $input.keyup(function (e) {
+        if (e.keyCode === 13) {
+          var query_el = $('#triple-pattern');
+          var query = query_el.val();
+
+          query_el.val((query.endsWith("---") || query.length === 0 ? query : query + "---") + $input.val());
+          $input.val("");
+          return false;
+        }
+      });
+    }
+
+    function throwException(message) {
+      // throw exception & also informing user
+      alert(message);
+      throw message;
+    }
+
+    function fullURI(shortURI) {
+      var parts = shortURI.split(":");
+      if (parts.length !== 2) {
+        throwException("Cannot convert short URI to full URI because of invalid format: " + shortURI);
+      }
+
+      if (!window.namespaces[parts[0]]) {
+        throwException("Invalid namespace: " + parts[0]);
+      }
+
+      return window.namespaces[parts[0]] + parts[1];
+    }
+
+    function shortenURI(fullURI) {
+      for (var prefix in window.namespaces) {
+        if (fullURI.startsWith(window.namespaces[prefix])) {
+          return fullURI.replace(window.namespaces[prefix], prefix + ":")
+        }
+      }
+      return fullURI;
+    }
+
+    function traceNodeByURI(uri) {
+      // find all model contain node which label.uri is uri
+      var results = [];
+      for (var model of window.models) {
+        if (model.node_label_uri_index[uri]) {
+          results.push(model.id);
+        }
+      }
+      return results;
+    }
+
+    function compareQueryURI(real_uri, query_uri) {
+        return query_uri === "*" || real_uri === query_uri;
+    }
+
+    function traceTriple(source_label_uri, link_label_uri, target_label_uri) {
+      var results = [];
+
+      if (link_label_uri === '*') {
+        if (source_label_uri === "*" || target_label_uri === "*") {
+          return source_label_uri === "*" ? traceNodeByURI(target_label_uri) : traceNodeByURI(source_label_uri);
+        }
+
+        for (var model of window.models) {
+          if (!model.node_label_uri_index[source_label_uri]) continue;
+
+          var possible_source_nodes = model.node_label_uri_index[source_label_uri].map(function (i) { return model.nodes[i]; });
+          for (var node of possible_source_nodes) {
+            var outgoing_link_ids = model.node_outgoing_links[node.id];
+            var foundAnswer = false;
+            // iterate all outgoing link & test if there is a target node that its label match to target_label_uri
+            for (var link_id of outgoing_link_ids) {
+              var link = model.links[model.link_index[link_id]];
+              if (target_label_uri === model.nodes[model.node_index[link.target_id]].label.uri) {
+                results.push(model.id);
+                foundAnswer = true;
+                break;
+              }
+            }
+
+            if (foundAnswer) break;
+          }
+        }
+      } else {
+        for (var model of window.models) {
+          if (!model.link_label_uri_index[link_label_uri]) continue;
+          var possible_links = model.link_label_uri_index[link_label_uri].map(function (i) { return model.links[i]; });
+
+          for (var link of possible_links) {
+            var target = model.nodes[model.node_index[link.target_id]];
+            var source = model.nodes[model.node_index[link.source_id]];
+            if (compareQueryURI(source.label.uri, source_label_uri) && compareQueryURI(target.label.uri, target_label_uri)) {
+              results.push(model.id);
+              break;
+            }
+          }
+        }
+      }
+
+      return results;
+    }
+
+    function traceNodePattern(node_label_uri, link_target_uris) {
+      // find graph that have a node with node_label_uri and properties satisfied link_target_uris
+      // this will run much slower than traceTriple since this is a quick solution and it needs to support more cases
+      var results = []
+
+      for (var model of window.models) {
+        for (var node of model.nodes) {
+          if (!compareQueryURI(node.label.uri, node_label_uri)) {
+            // this node doesn't match, so ignore it
+            continue;
+          }
+
+          // this node is matched, now check the target
+          var outgoing_links = model.node_outgoing_links[node.id].map(function (linkId) {
+            return model.links[model.link_index[linkId]];
+          });
+
+          if (outgoing_links.length === 0) {
+            // its properties doesn't match, ignore it
+            continue;
+          }
+
+          var used_link_target_uris = new Set();
+          for (var link of outgoing_links) {
+            var target = model.nodes[model.node_index[link.target_id]];
+            for (var i = 0; i < link_target_uris.length; i++) {
+              if (used_link_target_uris.has(i)) {
+                continue;
+              }
+
+              var link_label_uri = link_target_uris[i][0],
+                  target_label_uri = link_target_uris[i][1];
+
+              if (compareQueryURI(link.label.uri, link_label_uri) && compareQueryURI(target.label.uri, target_label_uri)) {
+                used_link_target_uris.add(i);
+                break;
+              }
+            }
+          }
+
+          if (used_link_target_uris.size === link_target_uris.length) {
+            // all properties matched
+            results.push(model.id);
+          }
+        }
+      }
+
+      return Array.from(new Set(results)).sort();
+    }
+
+    function queryTriplePattern(triplePattern) {
+      // query to see if any semantic model is matched with this pattern
+      var modelNames = window.models.map(function (m) { return m.id; });
+
+      if (triplePattern.trim() !== "") {
+        var triple = triplePattern.split("---").map(function (e) { return e === '*' ? e : fullURI(e); });
+        switch (triple.length) {
+          case 1:
+            modelNames = traceNodeByURI(triple[0]);
+            break;
+          case 3:
+            modelNames = traceTriple(triple[0], triple[1], triple[2]);
+            break;
+          case 5:
+          case 7:
+          case 9:
+          case 11:
+          case 13:
+            var properties = [];
+            for (var i = 1; i < triple.length; i+=2) {
+              properties.push([triple[i], triple[i+1]]);
+            }
+            modelNames = traceNodePattern(triple[0], properties);
+            break;
+          default:
+            throwException("Invalid query: " + triplePattern);
+        }
+      }
+
+      GUIData.updateModels(modelNames);
+    }
+
+    function copyToClipboard(text) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val(text).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+
+    $(function () {
+      makeReadMe();
+      loadJSONModels(modelJSON)
+        .then(makeTypeAHead);
+    });
+  </script>
+</body>
+</html>

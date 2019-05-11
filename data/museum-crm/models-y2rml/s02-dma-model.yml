@@ -1,0 +1,541 @@
+commands:
+-   _type_: PyTransformNewColumn
+    code: >-
+        if getValue("Artist Name"):
+            __return__ = "https://www.dma.org/person/" + Misc.slugify(getValue("Artist Name"))
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Artist Name
+    new_attr_name: ArtistURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        if getValue("Artist Name"):
+            __return__ = getValue("ArtistURI") + "/name"
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - ArtistURI
+    - Artist Name
+    new_attr_name: NameURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_nationality_uri(getValue("ArtistURI"), getValue("Artist Nationality"))
+    default_error_value: ''
+    input_attr_paths:
+    - ArtistURI
+    - Artist Nationality
+    new_attr_name: NationalityURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("Artist Birth Date"))
+    default_error_value: ''
+    input_attr_paths:
+    - Artist Birth Date
+    new_attr_name: BirthDateEarliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("Artist Birth Date"))
+    default_error_value: ''
+    input_attr_paths:
+    - Artist Birth Date
+    new_attr_name: BirthDateLatest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_birth_uri(getValue("ArtistURI"), getValue("BirthDateEarliest"))
+    default_error_value: ''
+    input_attr_paths:
+    - BirthDateEarliest
+    - ArtistURI
+    new_attr_name: BirthURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_birth_date_uri(getValue("ArtistURI"), getValue("BirthDateEarliest"))
+    default_error_value: ''
+    input_attr_paths:
+    - BirthDateEarliest
+    - ArtistURI
+    new_attr_name: BirthDateURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("Artist Death Date"))
+    default_error_value: ''
+    input_attr_paths:
+    - Artist Death Date
+    new_attr_name: DeathDateEarliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("Artist Death Date"))
+    default_error_value: ''
+    input_attr_paths:
+    - Artist Death Date
+    new_attr_name: DeathDateLatest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_death_uri(getValue("ArtistURI"), getValue("DeathDateEarliest"))
+    default_error_value: ''
+    input_attr_paths:
+    - DeathDateEarliest
+    - ArtistURI
+    new_attr_name: DeathURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_death_date_uri(getValue("ArtistURI"), getValue("DeathDateEarliest"))
+    default_error_value: ''
+    input_attr_paths:
+    - DeathDateEarliest
+    - ArtistURI
+    new_attr_name: DeathDateURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        if getValue("Object ID"):
+            __return__ = "https://www.dma.org/object/" + Misc.slugify(getValue("Object ID"))
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Object ID
+    new_attr_name: ObjectURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_production_uri(getValue("ObjectURI"))
+    default_error_value: ''
+    input_attr_paths:
+    - ObjectURI
+    new_attr_name: ProductionURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_product_date_uri(getValue("ProductionURI"),
+        getValue("Object Earliest Date"))
+    default_error_value: ''
+    input_attr_paths:
+    - Object Earliest Date
+    - ProductionURI
+    new_attr_name: ProductionDateURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_type_assignment_uri(getValue("ObjectURI"),
+        getValue("Object Work Type"))
+    default_error_value: ''
+    input_attr_paths:
+    - Object Work Type
+    - ObjectURI
+    new_attr_name: TypeAssignmentURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_accession_uri(getValue("ObjectURI"))
+    default_error_value: ''
+    input_attr_paths:
+    - ObjectURI
+    new_attr_name: accession_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_object_id_uri(getValue("ObjectURI"))
+    default_error_value: ''
+    input_attr_paths:
+    - ObjectURI
+    new_attr_name: object_id_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_primary_title_uri(getValue("ObjectURI"), getValue("Object Title"))
+    default_error_value: ''
+    input_attr_paths:
+    - ObjectURI
+    - Object Title
+    new_attr_name: title_uri
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: Object Facet Value 1
+    node_id: crm:E33_Linguistic_Object3
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: DeathDateURI
+    node_id: crm:E52_Time-Span2
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: DeathDateLatest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E35_Title
+    input_attr_path: Object Title
+    node_id: crm:E35_Title1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: Artist Death Date
+    node_id: crm:E52_Time-Span2
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: ProductionDateURI
+    node_id: crm:E52_Time-Span3
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: Object Latest Date
+    node_id: crm:E52_Time-Span3
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E42_Identifier
+    input_attr_path: object_id_uri
+    node_id: crm:E42_Identifier2
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E12_Production
+    input_attr_path: ProductionURI
+    node_id: crm:E12_Production1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: BirthDateLatest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E63_Beginning_of_Existence
+    input_attr_path: BirthURI
+    node_id: crm:E63_Beginning_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E40_Legal_Body
+    input_attr_path: Object Link Source
+    node_id: crm:E40_Legal_Body1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: Artist Birth Date
+    node_id: crm:E52_Time-Span1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E74_Group
+    input_attr_path: NationalityURI
+    node_id: crm:E74_Group1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: DeathDateEarliest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: Object Earliest Date
+    node_id: crm:E52_Time-Span3
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E17_Type_Assignment
+    input_attr_path: TypeAssignmentURI
+    node_id: crm:E17_Type_Assignment1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E22_Man-Made_Object
+    input_attr_path: ObjectURI
+    node_id: crm:E22_Man-Made_Object1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E42_Identifier
+    input_attr_path: Object ID
+    node_id: crm:E42_Identifier1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E82_Actor_Appellation
+    input_attr_path: Artist Name
+    node_id: crm:E82_Actor_Appellation1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E74_Group
+    input_attr_path: Artist Nationality
+    node_id: crm:E74_Group1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E55_Type
+    input_attr_path: Object Work Type
+    node_id: crm:E55_Type1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: BirthDateEarliest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: BirthDateURI
+    node_id: crm:E52_Time-Span1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E82_Actor_Appellation
+    input_attr_path: NameURI
+    node_id: crm:E82_Actor_Appellation1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E64_End_of_Existence
+    input_attr_path: DeathURI
+    node_id: crm:E64_End_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E39_Actor
+    input_attr_path: ArtistURI
+    node_id: crm:E39_Actor1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E42_Identifier
+    input_attr_path: Alternate Object ID
+    node_id: crm:E42_Identifier2
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E42_Identifier
+    input_attr_path: accession_uri
+    node_id: crm:E42_Identifier1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: Object Earliest Date Display
+    node_id: crm:E52_Time-Span3
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: Object Rights
+    node_id: crm:E33_Linguistic_Object1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: dimensions
+    node_id: crm:E33_Linguistic_Object2
+    type: rdf:value
+-   _type_: SetInternalLink
+    link_lbl: crm:P131_is_identified_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E82_Actor_Appellation1
+    target_uri: crm:E82_Actor_Appellation
+-   _type_: SetInternalLink
+    link_lbl: crm:P107i_is_current_or_former_member_of
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E74_Group1
+    target_uri: crm:E74_Group
+-   _type_: SetInternalLink
+    link_lbl: crm:P92i_was_brought_into_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E63_Beginning_of_Existence1
+    target_uri: crm:E63_Beginning_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E63_Beginning_of_Existence1
+    source_uri: crm:E63_Beginning_of_Existence
+    target_id: crm:E52_Time-Span1
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P93i_was_taken_out_of_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E64_End_of_Existence1
+    target_uri: crm:E64_End_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E64_End_of_Existence1
+    source_uri: crm:E64_End_of_Existence
+    target_id: crm:E52_Time-Span2
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P1_is_identified_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E42_Identifier1
+    target_uri: crm:E42_Identifier
+-   _type_: SetInternalLink
+    link_lbl: crm:P102_has_title
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E35_Title1
+    target_uri: crm:E35_Title
+-   _type_: SetInternalLink
+    link_lbl: crm:P108i_was_produced_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E12_Production1
+    target_uri: crm:E12_Production
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E12_Production1
+    source_uri: crm:E12_Production
+    target_id: crm:E52_Time-Span3
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P41i_was_classified_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E17_Type_Assignment1
+    target_uri: crm:E17_Type_Assignment
+-   _type_: SetInternalLink
+    link_lbl: crm:P42_assigned
+    source_id: crm:E17_Type_Assignment1
+    source_uri: crm:E17_Type_Assignment
+    target_id: crm:E55_Type1
+    target_uri: crm:E55_Type
+-   _type_: SetInternalLink
+    link_lbl: crm:P1_is_identified_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E42_Identifier2
+    target_uri: crm:E42_Identifier
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object1
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object2
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object3
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P52_has_current_owner
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E40_Legal_Body1
+    target_uri: crm:E40_Legal_Body
+-   _type_: SetInternalLink
+    link_lbl: crm:P14_carried_out_by
+    source_id: crm:E12_Production1
+    source_uri: crm:E12_Production
+    target_id: crm:E39_Actor1
+    target_uri: crm:E39_Actor
+history:
+    all_attrs:
+    - Record Type
+    - Object ID
+    - ObjectURI
+    - ProductionURI
+    - Object Title
+    - Object Work Type
+    - TypeAssignmentURI
+    - Alternate Object ID
+    - Artist Name
+    - ArtistURI
+    - NationalityURI
+    - NameURI
+    - Artist Birth Date
+    - BirthDateLatest
+    - BirthDateEarliest
+    - BirthDateURI
+    - BirthURI
+    - Artist Death Date
+    - DeathDateLatest
+    - DeathDateEarliest
+    - DeathDateURI
+    - DeathURI
+    - Artist Nationality
+    - Role Type
+    - Object Earliest Date
+    - ProductionDateURI
+    - Object Latest Date
+    - Object Earliest Date Display
+    - Object Latest Date Display
+    - Object Rights
+    - Object Facet Label 1
+    - Object Facet Value 1
+    - Object Facet Label 2
+    - Object Facet Value 2
+    - Object Facet Label 3
+    - Object Facet Value 3
+    - Object Facet Label 4
+    - Object Facet Value 4
+    - Object Link Source
+    - Measurement Height
+    - Measurement Width
+    - Measurement Depth
+    - Measurement Units
+    - dimensions
+    - accession_uri
+    - object_id_uri
+    ignored_attrs:
+    - Record Type
+    - Role Type
+    - Object Latest Date Display
+    - Object Facet Label 1
+    - Object Facet Label 2
+    - Object Facet Value 2
+    - Object Facet Label 3
+    - Object Facet Value 3
+    - Object Facet Label 4
+    - Object Facet Value 4
+    - Measurement Height
+    - Measurement Width
+    - Measurement Depth
+    - Measurement Units
+    input_attrs:
+    - Record Type
+    - Object ID
+    - Object Title
+    - Object Work Type
+    - Alternate Object ID
+    - Artist Name
+    - Artist Birth Date
+    - Artist Death Date
+    - Artist Nationality
+    - Role Type
+    - Object Earliest Date
+    - Object Latest Date
+    - Object Earliest Date Display
+    - Object Latest Date Display
+    - Object Rights
+    - Object Facet Label 1
+    - Object Facet Value 1
+    - Object Facet Label 2
+    - Object Facet Value 2
+    - Object Facet Label 3
+    - Object Facet Value 3
+    - Object Facet Label 4
+    - Object Facet Value 4
+    - Object Link Source
+    - Measurement Height
+    - Measurement Width
+    - Measurement Depth
+    - Measurement Units
+    - dimensions
+    processed_attrs:
+    - Artist Name
+    - ArtistURI
+    - NameURI
+    - Artist Nationality
+    - NationalityURI
+    - Artist Birth Date
+    - BirthDateLatest
+    - BirthDateEarliest
+    - BirthDateURI
+    - BirthURI
+    - Artist Death Date
+    - DeathDateLatest
+    - DeathDateEarliest
+    - DeathDateURI
+    - DeathURI
+    - ObjectURI
+    - Object ID
+    - Object Title
+    - Object Work Type
+    - Alternate Object ID
+    - Object Rights
+    - Object Link Source
+    - dimensions
+    - TypeAssignmentURI
+    - ProductionURI
+    - ProductionDateURI
+    - Object Earliest Date
+    - Object Latest Date
+    - Object Earliest Date Display
+    - Object Facet Value 1
+    - accession_uri
+    - object_id_uri

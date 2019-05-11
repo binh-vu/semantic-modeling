@@ -1,0 +1,9 @@
+---
+- hosts: all
+  roles:
+    - common_setup
+    - anaconda3
+    - docker
+- hosts: exp-workers
+  roles:
+    - setup_exp_slave

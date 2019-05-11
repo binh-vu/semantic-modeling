@@ -1,0 +1,12 @@
+- name: install common packages
+  yum:
+    name: "{{ packages }}"
+    update_cache: yes
+  become: yes
+  vars:
+      packages:
+      - htop
+      - curl
+      - wget
+      - tree
+      - "@Development tools"

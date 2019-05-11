@@ -1,0 +1,12 @@
+- name: get anaconda
+  get_url: 
+    url: https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
+    dest: /workspace/downloads/Anaconda3-5.2.0-Linux-x86_64.sh
+- name: install anaconda
+  shell: >
+    bash /workspace/downloads/Anaconda3-5.2.0-Linux-x86_64.sh -u -p /workspace/anaconda3 -b && 
+    echo 'export ANACONDA_HOME=/workspace/anaconda3' >> "{{ ansible_env.HOME }}/.bashrc" && 
+    echo 'export PATH=/workspace/anaconda3/bin:$PATH' >> "{{ ansible_env.HOME }}/.bashrc" && 
+    touch "{{ ansible_env.HOME }}/.ansible/anaconda.installed"
+  args:
+    creates: "{{ ansible_env.HOME }}/.ansible/anaconda.installed"

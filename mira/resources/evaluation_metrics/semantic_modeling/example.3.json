@@ -1,0 +1,48 @@
+{
+  "comment": "Example 1, no dependent but have incorrect link",
+  "gold_sm": [
+    "ManMadeObject1--was_classified_by--TypeAssignment1",
+    "ManMadeObject1--was_classified_by--TypeAssignment2",
+    "TypeAssignment1--assigned--Type1",
+    "TypeAssignment2--assigned--Type2",
+    "Type1--label--type_a:d",
+    "Type2--label--type_b:d",
+    "ManMadeObject1--referred_by--LinguisticObject1",
+    "ManMadeObject1--referred_by--LinguisticObject2",
+    "ManMadeObject1--referred_by--LinguisticObject3",
+    "LinguisticObject1--value--Medium:d",
+    "LinguisticObject2--value--CreditLine:d",
+    "LinguisticObject3--value--Dimensions:d",
+    "ManMadeObject1--produce_by--Production1",
+    "Production1--referred_by--LinguisticObject4",
+    "LinguisticObject4--value--xxx:d",
+    "Production1--creator--Actor1",
+    "Actor1--label--artist_name:d"
+  ],
+  "pred_sm": [
+    "ManMadeObject1--was_classified_by--TypeAssignment1",
+    "TypeAssignment1--assigned--Type1",
+    "Type1--label--type_b:d",
+    "ManMadeObject1--referred_by--LinguisticObject1",
+    "LinguisticObject1--value--Dimensions:d",
+    "ManMadeObject1--produce_by--Production1",
+    "Production1--referred_by--LinguisticObject2",
+    "LinguisticObject2--value--xxx:d",
+    "Production1--creator--Actor1",
+    "Actor1--label--artist_name:d"
+  ],
+  "bijection": {
+    "ManMadeObject1": "ManMadeObject1",
+    "TypeAssignment2": "TypeAssignment1",
+    "Type2": "Type1",
+    "LinguisticObject3": "LinguisticObject1",
+    "Production1": "Production1",
+    "Actor1": "Actor1",
+    "LinguisticObject4": "LinguisticObject2"
+  },
+  "f1_precision_recall": [
+    0.7407407407407407,
+    1.0,
+    0.5882352941176471
+  ]
+}

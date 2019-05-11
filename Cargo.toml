@@ -1,0 +1,9 @@
+[workspace]
+
+members = [
+    "gmtk",
+    "exec",
+    "mira",
+    "rdb2rdf",
+    "algorithm"
+]

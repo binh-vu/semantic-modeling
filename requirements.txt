@@ -1,0 +1,18 @@
+pyrsistent
+matplotlib
+orderedset
+numpy
+ontospy==1.8.5
+pandas
+ujson
+rdflib
+simplejson
+bson
+tensorboardX
+xmltodict
+redis
+fastnumbers
+spacy
+terminaltables
+
+# pytorch, you need to install manually

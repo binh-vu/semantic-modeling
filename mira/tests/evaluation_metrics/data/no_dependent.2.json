@@ -1,0 +1,424 @@
+{
+    "comment": "No dependence but have incorrect link",
+    "gold_sm": {
+        "index_link_label": true,
+        "index_node_label": true,
+        "index_node_type": true,
+        "links": [
+            {
+                "id": 0,
+                "label": "schema:givenName",
+                "source_id": 1,
+                "target_id": 0,
+                "type": 0
+            },
+            {
+                "id": 1,
+                "label": "schema:familyName",
+                "source_id": 1,
+                "target_id": 2,
+                "type": 0
+            },
+            {
+                "id": 2,
+                "label": "schema:age",
+                "source_id": 1,
+                "target_id": 3,
+                "type": 0
+            },
+            {
+                "id": 3,
+                "label": "schema:name",
+                "source_id": 1,
+                "target_id": 4,
+                "type": 0
+            },
+            {
+                "id": 4,
+                "label": "schema:height",
+                "source_id": 1,
+                "target_id": 5,
+                "type": 0
+            },
+            {
+                "id": 5,
+                "label": "schema:playPosition",
+                "source_id": 1,
+                "target_id": 6,
+                "type": 0
+            },
+            {
+                "id": 6,
+                "label": "schema:tag",
+                "source_id": 1,
+                "target_id": 7,
+                "type": 0
+            },
+            {
+                "id": 7,
+                "label": "schema:birthDate",
+                "source_id": 1,
+                "target_id": 8,
+                "type": 0
+            },
+            {
+                "id": 8,
+                "label": "schema:goalScored",
+                "source_id": 1,
+                "target_id": 9,
+                "type": 0
+            },
+            {
+                "id": 9,
+                "label": "schema:name",
+                "source_id": 11,
+                "target_id": 10,
+                "type": 0
+            },
+            {
+                "id": 10,
+                "label": "schema:name",
+                "source_id": 13,
+                "target_id": 12,
+                "type": 0
+            },
+            {
+                "id": 11,
+                "label": "schema:name",
+                "source_id": 15,
+                "target_id": 14,
+                "type": 0
+            },
+            {
+                "id": 12,
+                "label": "schema:inClub",
+                "source_id": 1,
+                "target_id": 15,
+                "type": 0
+            },
+            {
+                "id": 13,
+                "label": "schema:inLeague",
+                "source_id": 15,
+                "target_id": 11,
+                "type": 0
+            },
+            {
+                "id": 14,
+                "label": "schema:inNationalTeam",
+                "source_id": 1,
+                "target_id": 13,
+                "type": 0
+            }
+        ],
+        "name": "s06---uefa_players",
+        "nodes": [
+            {
+                "id": 0,
+                "label": "fn",
+                "type": 2
+            },
+            {
+                "id": 1,
+                "label": "schema:Player",
+                "type": 1
+            },
+            {
+                "id": 2,
+                "label": "ln",
+                "type": 2
+            },
+            {
+                "id": 3,
+                "label": "ag",
+                "type": 2
+            },
+            {
+                "id": 4,
+                "label": "sn",
+                "type": 2
+            },
+            {
+                "id": 5,
+                "label": "ht",
+                "type": 2
+            },
+            {
+                "id": 6,
+                "label": "ps",
+                "type": 2
+            },
+            {
+                "id": 7,
+                "label": "no",
+                "type": 2
+            },
+            {
+                "id": 8,
+                "label": "db",
+                "type": 2
+            },
+            {
+                "id": 9,
+                "label": "go/at",
+                "type": 2
+            },
+            {
+                "id": 10,
+                "label": "cn",
+                "type": 2
+            },
+            {
+                "id": 11,
+                "label": "schema:League",
+                "type": 1
+            },
+            {
+                "id": 12,
+                "label": "nt",
+                "type": 2
+            },
+            {
+                "id": 13,
+                "label": "schema:SportsTeam",
+                "type": 1
+            },
+            {
+                "id": 14,
+                "label": "cb",
+                "type": 2
+            },
+            {
+                "id": 15,
+                "label": "schema:SportsClub",
+                "type": 1
+            }
+        ]
+    },
+    "pred_sm": {
+        "index_link_label": false,
+        "index_node_label": true,
+        "index_node_type": true,
+        "links": [
+            {
+                "id": 0,
+                "label": "schema:height",
+                "source_id": 2,
+                "target_id": 0,
+                "type": 0
+            },
+            {
+                "id": 1,
+                "label": "schema:birthDate",
+                "source_id": 2,
+                "target_id": 1,
+                "type": 0
+            },
+            {
+                "id": 2,
+                "label": "schema:inNationalTeam",
+                "source_id": 2,
+                "target_id": 4,
+                "type": 0
+            },
+            {
+                "id": 3,
+                "label": "schema:name",
+                "source_id": 4,
+                "target_id": 3,
+                "type": 0
+            },
+            {
+                "id": 4,
+                "label": "schema:name",
+                "source_id": 4,
+                "target_id": 5,
+                "type": 0
+            },
+            {
+                "id": 5,
+                "label": "schema:inClub",
+                "source_id": 2,
+                "target_id": 7,
+                "type": 0
+            },
+            {
+                "id": 6,
+                "label": "schema:name",
+                "source_id": 7,
+                "target_id": 6,
+                "type": 0
+            },
+            {
+                "id": 7,
+                "label": "schema:tag",
+                "source_id": 2,
+                "target_id": 8,
+                "type": 0
+            },
+            {
+                "id": 8,
+                "label": "schema:name",
+                "source_id": 2,
+                "target_id": 9,
+                "type": 0
+            },
+            {
+                "id": 9,
+                "label": "schema:tag",
+                "source_id": 2,
+                "target_id": 10,
+                "type": 0
+            },
+            {
+                "id": 10,
+                "label": "schema:name",
+                "source_id": 2,
+                "target_id": 11,
+                "type": 0
+            },
+            {
+                "id": 11,
+                "label": "schema:tag",
+                "source_id": 2,
+                "target_id": 12,
+                "type": 0
+            },
+            {
+                "id": 12,
+                "label": "schema:name",
+                "source_id": 2,
+                "target_id": 13,
+                "type": 0
+            },
+            {
+                "id": 13,
+                "label": "schema:playPosition",
+                "source_id": 2,
+                "target_id": 14,
+                "type": 0
+            }
+        ],
+        "name": "",
+        "nodes": [
+            {
+                "id": 0,
+                "label": "ht",
+                "type": 2
+            },
+            {
+                "id": 1,
+                "label": "db",
+                "type": 2
+            },
+            {
+                "id": 2,
+                "label": "schema:Player",
+                "type": 1
+            },
+            {
+                "id": 3,
+                "label": "cn",
+                "type": 2
+            },
+            {
+                "id": 4,
+                "label": "schema:SportsTeam",
+                "type": 1
+            },
+            {
+                "id": 5,
+                "label": "nt",
+                "type": 2
+            },
+            {
+                "id": 6,
+                "label": "cb",
+                "type": 2
+            },
+            {
+                "id": 7,
+                "label": "schema:SportsClub",
+                "type": 1
+            },
+            {
+                "id": 8,
+                "label": "go/at",
+                "type": 2
+            },
+            {
+                "id": 9,
+                "label": "sn",
+                "type": 2
+            },
+            {
+                "id": 10,
+                "label": "ag",
+                "type": 2
+            },
+            {
+                "id": 11,
+                "label": "fn",
+                "type": 2
+            },
+            {
+                "id": 12,
+                "label": "no",
+                "type": 2
+            },
+            {
+                "id": 13,
+                "label": "ln",
+                "type": 2
+            },
+            {
+                "id": 14,
+                "label": "ps",
+                "type": 2
+            }
+        ]
+    },
+    "data_node_mode": "NoTouch",
+    "f1_precision_recall": [
+        0.6206896551724138,
+        0.6428571428571429,
+        0.6
+    ],
+    "bijection": {
+        "prime2x": [
+            5,
+            8,
+            1,
+            10,
+            13,
+            12,
+            14,
+            15,
+            9,
+            4,
+            3,
+            0,
+            7,
+            2,
+            6
+        ],
+        "x2prime": [
+            11,
+            2,
+            13,
+            10,
+            9,
+            0,
+            14,
+            12,
+            1,
+            8,
+            3,
+            -1,
+            5,
+            4,
+            6,
+            7
+        ]
+    }
+}

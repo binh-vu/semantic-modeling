@@ -1,0 +1,8 @@
+- name: install prerequisite packages
+  yum:
+    name: "{{ packages }}"
+    update_cache: yes
+  become: yes
+  vars:
+      packages:
+      - mesa-libGL

@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY schema "http://schema.org/" >
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY skos "http://www.w3.org/2008/05/skos#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY ElementsGr2 "http://rdvocab.info/ElementsGr2/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY edm "http://www.europeana.eu/schemas/edm/" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY aac-ont "http://www.americanartcollaborative.org/ontology/" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY FRBRentitiesRDA "http://rdvocab.info/uri/schema/FRBRentitiesRDA/" >
+]>
+
+
+<rdf:RDF xmlns="&aac-ont;aac-ont.owl#"
+     xml:base="&aac-ont;aac-ont.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:aac-ont="http://www.americanartcollaborative.org/ontology/"
+     xmlns:edm="http://www.europeana.eu/schemas/edm/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:FRBRentitiesRDA="http://rdvocab.info/uri/schema/FRBRentitiesRDA/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ElementsGr2="http://rdvocab.info/ElementsGr2/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:skos="http://www.w3.org/2008/05/skos#">
+    <owl:Ontology rdf:about="&aac-ont;aac-ont.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:ObjectProperty rdf:about="&dcterms;creator">
+        <rdfs:range rdf:resource="&edm;Agent"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&aac-ont;creatorOf">
+        <rdfs:domain rdf:resource="&edm;Agent"/>
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="&dcterms;creator"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+
+    <!-- http://rdvocab.info/ElementsGr2/placeOfBirth -->
+
+    <owl:ObjectProperty rdf:about="&ElementsGr2;placeOfBirth">
+        <rdfs:domain rdf:resource="&aac-ont;Person"/>
+        <rdfs:range rdf:resource="&aac-ont;Place"/>
+        <rdfs:subPropertyOf rdf:resource="&aac-ont;associatedPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdvocab.info/ElementsGr2/placeOfDeath -->
+
+    <owl:ObjectProperty rdf:about="&ElementsGr2;placeOfDeath">
+        <rdfs:domain rdf:resource="&aac-ont;Person"/>
+        <rdfs:range rdf:resource="&aac-ont;Place"/>
+        <rdfs:subPropertyOf rdf:resource="&aac-ont;associatedPlace"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.americanartcollaborative.org/ontology/associatedPlace -->
+
+    <owl:ObjectProperty rdf:about="&aac-ont;associatedPlace">
+        <rdfs:label xml:lang="en">Associated places.</rdfs:label>
+        <rdfs:comment xml:lang="en">Associated places with a person or a cultural heritage.</rdfs:comment>
+        <rdfs:range rdf:resource="&aac-ont;Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.americanartcollaborative.org/ontology/sitter -->
+
+    <owl:ObjectProperty rdf:about="&aac-ont;sitter">
+        <rdfs:label xml:lang="en">Sitter</rdfs:label>
+        <rdfs:comment xml:lang="en">The person depicted in an art work.</rdfs:comment>
+        <rdfs:domain rdf:resource="&aac-ont;CulturalHeritageObject"/>
+        <rdfs:domain rdf:resource="&edm;ProvidedCHO"/>
+        <rdfs:range rdf:resource="&aac-ont;Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+    <!-- http://www.americanartcollaborative.org/ontology/objectId -->
+
+    <owl:DatatypeProperty rdf:about="&aac-ont;objectId">
+        <rdfs:label xml:lang="en">Object Id of a cultural heritage object.</rdfs:label>
+        <rdfs:comment xml:lang="en">The internal identifier of a cultural heritage object.</rdfs:comment>
+        <rdfs:domain rdf:resource="&aac-ont;CulturalHeritageObject"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.americanartcollaborative.org/ontology/objectName -->
+
+    <owl:DatatypeProperty rdf:about="&aac-ont;accessionNumber">
+        <rdfs:label xml:lang="en">Accession number of a cultural heritage object.</rdfs:label>
+        <rdfs:comment xml:lang="en">The identifier of a cultural heritage object in SAAM</rdfs:comment>
+        <rdfs:domain rdf:resource="&aac-ont;CulturalHeritageObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://rdvocab.info/uri/schema/FRBRentitiesRDA/Person -->
+
+    <owl:Class rdf:about="&FRBRentitiesRDA;Person"/>
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="&schema;Place"/>
+    
+
+
+    <!-- http://www.americanartcollaborative.org/ontology/CulturalHeritageObject -->
+
+    <owl:Class rdf:about="&aac-ont;CulturalHeritageObject">
+        <rdfs:label xml:lang="en">A cultural heritage object</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&edm;ProvidedCHO"/>
+        <rdfs:subClassOf rdf:resource="&skos;Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.americanartcollaborative.org/ontology/Organization -->
+
+    <owl:Class rdf:about="&aac-ont;Organization">
+        <rdfs:subClassOf rdf:resource="&edm;Agent"/>
+        <rdfs:subClassOf rdf:resource="&skos;Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.americanartcollaborative.org/ontology/Person -->
+
+    <owl:Class rdf:about="&aac-ont;Person">
+        <rdfs:label xml:lang="en">An artist</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&FRBRentitiesRDA;Person"/>
+        <rdfs:subClassOf rdf:resource="&edm;Agent"/>
+        <rdfs:subClassOf rdf:resource="&skos;Concept"/>
+        <rdfs:subClassOf rdf:resource="&foaf;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.americanartcollaborative.org/ontology/Place -->
+
+    <owl:Class rdf:about="&aac-ont;Place">
+        <rdfs:subClassOf rdf:resource="&schema;Place"/>
+        <rdfs:subClassOf rdf:resource="&edm;Place"/>
+        <rdfs:subClassOf rdf:resource="&skos;Concept"/>
+    </owl:Class>
+    
+
+
+
+    
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

@@ -1,0 +1,2 @@
+ANACONDA_HOME: /workspace/anaconda3
+ANACONDA_PATH: "/workspace/anaconda3/bin:{{ ansible_env.PATH }}"

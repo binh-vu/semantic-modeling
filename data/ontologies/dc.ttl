@@ -1,0 +1,99 @@
+@base             <http://purl.org/NET/dc_owl2dl/elements> .
+@prefix dc:       <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcam:     <http://purl.org/dc/dcam/> .
+
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+
+<> a owl:Ontology ;
+	rdfs:label "Dublin Core Metadata Element Set, Version 1.1"@en ;
+	rdfs:comment "OWL 2 DL ontology for Dublin Core metadata elements from the http://purl.org/dc/elements/1.1/ namespace"@en ;
+	dc:creator <http://simon-reinhardt.de/#me> ;
+	dc:date "2009-09-05" ;
+	dc:rights <http://creativecommons.org/licenses/by-sa/3.0/> ;
+	owl:imports <http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf> .
+
+dc:contributor a owl:AnnotationProperty ;
+	rdfs:label "Contributor"@en-us ;
+	skos:definition "An entity responsible for making contributions to the resource."@en-us ;
+	rdfs:comment "Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity."@en-us .
+
+dc:coverage a owl:AnnotationProperty ;
+	rdfs:label "Coverage"@en-us ;
+	skos:definition "The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant."@en-us ;
+	rdfs:comment "Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names. Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges."@en-us ;
+	rdfs:seeAlso <http://www.getty.edu/research/tools/vocabulary/tgn/index.html> .
+
+dc:creator a owl:AnnotationProperty ;
+	rdfs:label "Creator"@en-us ;
+	skos:definition "An entity primarily responsible for making the resource."@en-us ;
+	rdfs:comment "Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."@en-us .
+
+dc:date a owl:AnnotationProperty ;
+	rdfs:label "Date"@en-us ;
+	skos:definition "A point or period of time associated with an event in the lifecycle of the resource."@en-us ;
+	rdfs:comment "Date may be used to express temporal information at any level of granularity. Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601."@en-us ;
+	rdfs:seeAlso <http://www.w3.org/TR/NOTE-datetime> .
+
+dc:description a owl:AnnotationProperty ;
+	rdfs:label "Description"@en-us ;
+	skos:definition "An account of the resource."@en-us ;
+	rdfs:comment "Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."@en-us .
+
+dc:format a owl:AnnotationProperty ;
+	rdfs:label "Format"@en-us ;
+	skos:definition "The file format, physical medium, or dimensions of the resource."@en-us ;
+	rdfs:comment "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types."@en-us ;
+	rdfs:seeAlso <http://www.iana.org/assignments/media-types/> .
+
+dc:identifier a owl:AnnotationProperty ;
+	rdfs:label "Identifier"@en-us ;
+	skos:definition "An unambiguous reference to the resource within a given context."@en-us ;
+	rdfs:comment "Recommended best practice is to identify the resource by means of a string conforming to a formal identification system."@en-us .
+
+dc:language a owl:AnnotationProperty ;
+	rdfs:label "Language"@en-us ;
+	skos:definition "A language of the resource."@en-us ;
+	rdfs:comment "Recommended best practice is to use a controlled vocabulary such as RFC 4646."@en-us ;
+	rdfs:seeAlso <http://www.ietf.org/rfc/rfc4646.txt> .
+
+dc:publisher a owl:AnnotationProperty ;
+	rdfs:label "Publisher"@en-us ;
+	skos:definition "An entity responsible for making the resource available."@en-us ;
+	rdfs:comment "Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity."@en-us .
+
+dc:relation a owl:AnnotationProperty ;
+	rdfs:label "Relation"@en-us ;
+	skos:definition "A related resource."@en-us ;
+	rdfs:comment "Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system."@en-us .
+
+dc:rights a owl:AnnotationProperty ;
+	rdfs:label "Rights"@en-us ;
+	skos:definition "Information about rights held in and over the resource."@en-us ;
+	rdfs:comment "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."@en-us .
+
+dc:source a owl:AnnotationProperty ;
+	rdfs:label "Source"@en-us ;
+	skos:definition "A related resource from which the described resource is derived."@en-us ;
+	rdfs:comment "The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system."@en-us .
+
+dc:subject a owl:AnnotationProperty ;
+	rdfs:label "Subject"@en-us ;
+	skos:definition "The topic of the resource."@en-us ;
+	rdfs:comment "Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary. To describe the spatial or temporal topic of the resource, use the Coverage element."@en-us .
+
+dc:title a owl:AnnotationProperty ;
+	rdfs:label "Title"@en-us ;
+	skos:definition "A name given to the resource."@en-us ;
+	rdfs:comment "Typically, a Title will be a name by which the resource is formally known."@en-us .
+
+dc:type a owl:AnnotationProperty ;
+	rdfs:label "Type"@en-us ;
+	skos:definition "The nature or genre of the resource."@en-us ;
+	rdfs:comment "Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary. To describe the file format, physical medium, or dimensions of the resource, use the Format element."@en-us ;
+	rdfs:seeAlso <http://dublincore.org/documents/dcmi-type-vocabulary/> .

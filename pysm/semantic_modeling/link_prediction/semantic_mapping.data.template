@@ -1,0 +1,17 @@
+predicates:
+  SemanticLabel/3: closed
+  IsClass/2: closed
+  Link/3: closed
+  Triple/3: open
+
+observations:
+  IsClass: {IsClassObsFile}
+  Link: {LinkObsFile}
+  SemanticLabel : {SemanticLabelObsFile}
+  Triple: {TripleObsFile}
+
+targets:
+  Triple : {TripleTargetFile}
+
+truth:
+  Triple : {TripleTruthFile}

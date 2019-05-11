@@ -1,0 +1,78 @@
+settings:
+  manual_seed: 120
+  mrf:
+    max_n_props: 10
+    max_n_duplications: 5
+    max_n_duplication_types: 4
+    templates:
+      enable_duplication_factors: true
+      enable_cooccurrence_factors: true
+    training_args:
+      n_epoch: 60
+      n_switch: 40
+      n_iter_eval: 20
+      mini_batch_size: 200
+      shuffle_mini_batch: false
+      manual_seed: 120
+      report_final_loss: true
+      optparams:
+        lr: 0.05
+        eps: 1e-5
+        weight_decays: [0.0]
+      optimizer: Adam
+      parallel_training: true
+      early_stopping:
+        patience: 5
+        min_delta: 0.001
+    features:
+      cooccurrence:
+        min_support: 0.9
+  learning:
+    max_n_examples: 300
+    max_permutation: 36000
+    auto_labeling_method: MaxF1
+    gen_data_method:
+      type: Elimination
+      discover_method:
+        type: ConstraintSpace
+        beam_width: 10
+        merge_plan_filter:
+          enable: true
+          max_n_empty_hop: 2
+      n_elimination: 2
+      n_candidates: 1000
+#      beam_settings:
+#        beam_width: 10
+#        n_results: 10
+#        max_data_node_hop: 2
+#        max_class_node_hop: 2
+#        n_explore_result: 1
+#        triple_adviser_max_candidate: 15
+#      type: TrialAndError
+#      beam_width: 15
+#      max_candidates_per_round: 30
+  predicting:
+    search_method:
+      type: BeamSearch
+      beam_width: 10
+      n_results: 10
+      discovery:
+        type: ConstraintSpace
+        beam_width: 10
+        merge_plan_filter:
+          enable: true
+          max_n_empty_hop: 2
+#        type: GeneralDiscovery
+#        beam_width: 10
+#        max_data_node_hop: 2
+#        max_class_node_hop: 2
+#        n_explore_result: 1
+#        triple_adviser_max_candidate: 15
+    early_stopping: NoStop
+    post_ranking:
+      type: NoPostRanking
+#      type: MicroRanking
+#      trigger_delta: 0.3
+#      coherence_weight: 0.5
+#      minimal_weight: 0.5
+  misc_conf: {}

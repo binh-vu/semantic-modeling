@@ -1,0 +1,331 @@
+commands:
+-   _type_: PyTransformNewColumn
+    code: >-
+        if getValue("Attribution"):
+            __return__ = "http://crystalbridges.org/person/" + Misc.slugify(getValue("Attribution"))
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Attribution
+    new_attr_name: ArtistURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        if getValue("Attribution"):
+            __return__ = getValue("ArtistURI") + "/appellation/primary_name"
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Attribution
+    - ArtistURI
+    new_attr_name: ArtistAppellationURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        if Misc.is_year(getValue("Begin Date")):
+            __return__ = getValue("Begin Date") + "-01-01"
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Begin Date
+    new_attr_name: BirthDateEarliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        if Misc.is_year(getValue("Begin Date")):
+            __return__ = getValue("Begin Date") + "-12-31"
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Begin Date
+    new_attr_name: BirthDateLatest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_birth_uri(getValue("ArtistURI"), getValue("BirthDateEarliest"))
+    default_error_value: ''
+    input_attr_paths:
+    - ArtistURI
+    - BirthDateEarliest
+    new_attr_name: BirthURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_birth_date_uri(getValue("ArtistURI"), getValue("BirthDateEarliest"))
+    default_error_value: ''
+    input_attr_paths:
+    - ArtistURI
+    - BirthDateEarliest
+    new_attr_name: BirthDateURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        if Misc.is_year(getValue("End Date")):
+            __return__ = getValue("End Date") + "-01-01"
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - End Date
+    new_attr_name: DeathDateEarliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        if Misc.is_year(getValue("End Date")):
+            __return__ = getValue("End Date") + "-12-31"
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - End Date
+    new_attr_name: DeathDateLatest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_death_uri(getValue("ArtistURI"), getValue("DeathDateEarliest"))
+    default_error_value: ''
+    input_attr_paths:
+    - ArtistURI
+    - DeathDateEarliest
+    new_attr_name: DeathURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_death_date_uri(getValue("ArtistURI"), getValue("DeathDateEarliest"))
+    default_error_value: ''
+    input_attr_paths:
+    - ArtistURI
+    - DeathDateEarliest
+    new_attr_name: DeathDateURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        if getValue("Title"):
+            __return__ = "http://crystalbridges.org/object/" + Misc.slugify(getValue("Title"))
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Title
+    new_attr_name: ObjectURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_production_uri(getValue("ObjectURI"))
+    default_error_value: ''
+    input_attr_paths:
+    - ObjectURI
+    new_attr_name: ProductionURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        if Misc.is_year(getValue("Dated")):
+            __return__ = getValue("Dated") + "-01-01"
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Dated
+    new_attr_name: DateBegin
+-   _type_: PyTransformNewColumn
+    code: >-
+        if Misc.is_year(getValue("Dated")):
+            __return__ = getValue("Dated") + "-01-01"
+        else:
+            __return__ = ""
+    default_error_value: ''
+    input_attr_paths:
+    - Dated
+    new_attr_name: DateEnd
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_product_date_uri(getValue("ProductionURI"),
+        getValue("Dated"))
+    default_error_value: ''
+    input_attr_paths:
+    - ProductionURI
+    - Dated
+    new_attr_name: ProductionDateURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_medium_uri(getValue("ObjectURI"), getValue("Medium"))
+    default_error_value: ''
+    input_attr_paths:
+    - ObjectURI
+    - Medium
+    new_attr_name: MediumURI
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtworkHelper.get_dimension_uri(getValue("ObjectURI"), getValue("Dimensions"))
+    default_error_value: ''
+    input_attr_paths:
+    - ObjectURI
+    - Dimensions
+    new_attr_name: DimensionURI
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: BirthDateLatest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E82_Actor_Appellation
+    input_attr_path: Attribution
+    node_id: crm:E82_Actor_Appellation1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: DeathDateLatest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: DimensionURI
+    node_id: crm:E33_Linguistic_Object2
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: Medium
+    node_id: crm:E33_Linguistic_Object1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: ProductionDateURI
+    node_id: crm:E52_Time-Span3
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E39_Actor
+    input_attr_path: ArtistURI
+    node_id: crm:E39_Actor1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E63_Beginning_of_Existence
+    input_attr_path: BirthURI
+    node_id: crm:E63_Beginning_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: Dated
+    node_id: crm:E52_Time-Span3
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: DateBegin
+    node_id: crm:E52_Time-Span3
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: DeathDateEarliest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: MediumURI
+    node_id: crm:E33_Linguistic_Object1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: DateEnd
+    node_id: crm:E52_Time-Span3
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: BirthDateURI
+    node_id: crm:E52_Time-Span1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: End Date
+    node_id: crm:E52_Time-Span2
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: BirthDateEarliest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E12_Production
+    input_attr_path: ProductionURI
+    node_id: crm:E12_Production1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E82_Actor_Appellation
+    input_attr_path: ArtistAppellationURI
+    node_id: crm:E82_Actor_Appellation1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: DeathDateURI
+    node_id: crm:E52_Time-Span2
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E64_End_of_Existence
+    input_attr_path: DeathURI
+    node_id: crm:E64_End_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: Begin Date
+    node_id: crm:E52_Time-Span1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: Dimensions
+    node_id: crm:E33_Linguistic_Object2
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E22_Man-Made_Object
+    input_attr_path: ObjectURI
+    node_id: crm:E22_Man-Made_Object1
+    type: karma:classLink
+-   _type_: SetInternalLink
+    link_lbl: crm:P131_is_identified_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E82_Actor_Appellation1
+    target_uri: crm:E82_Actor_Appellation
+-   _type_: SetInternalLink
+    link_lbl: crm:P92i_was_brought_into_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E63_Beginning_of_Existence1
+    target_uri: crm:E63_Beginning_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P93i_was_taken_out_of_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E64_End_of_Existence1
+    target_uri: crm:E64_End_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E63_Beginning_of_Existence1
+    source_uri: crm:E63_Beginning_of_Existence
+    target_id: crm:E52_Time-Span1
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E64_End_of_Existence1
+    source_uri: crm:E64_End_of_Existence
+    target_id: crm:E52_Time-Span2
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E12_Production1
+    source_uri: crm:E12_Production
+    target_id: crm:E52_Time-Span3
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P14_carried_out_by
+    source_id: crm:E12_Production1
+    source_uri: crm:E12_Production
+    target_id: crm:E39_Actor1
+    target_uri: crm:E39_Actor
+-   _type_: SetInternalLink
+    link_lbl: crm:P108i_was_produced_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E12_Production1
+    target_uri: crm:E12_Production
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object1
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P67i_is_referred_to_by
+    source_id: crm:E22_Man-Made_Object1
+    source_uri: crm:E22_Man-Made_Object
+    target_id: crm:E33_Linguistic_Object2
+    target_uri: crm:E33_Linguistic_Object

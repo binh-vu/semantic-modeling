@@ -1,0 +1,108 @@
+{
+  "graph": {
+    "index_link_label": false,
+    "index_node_label": true,
+    "index_node_type": true,
+    "links": [
+      {
+        "id": 0,
+        "label": "schema:tag",
+        "source_id": 1,
+        "target_id": 0,
+        "type": 0
+      },
+      {
+        "id": 1,
+        "label": "schema:name",
+        "source_id": 2,
+        "target_id": 0,
+        "type": 0
+      },
+      {
+        "id": 2,
+        "label": "schema:name",
+        "source_id": 3,
+        "target_id": 0,
+        "type": 0
+      },
+      {
+        "id": 3,
+        "label": "schema:playPosition",
+        "source_id": 4,
+        "target_id": 0,
+        "type": 0
+      },
+      {
+        "id": 4,
+        "label": "schema:inNationalTeam",
+        "source_id": 5,
+        "target_id": 2,
+        "type": 0
+      }
+    ],
+    "name": "",
+    "nodes": [
+      {
+        "id": 0,
+        "label": "Classement FIFA",
+        "type": 2
+      },
+      {
+        "id": 1,
+        "label": "schema:Player",
+        "type": 1
+      },
+      {
+        "id": 2,
+        "label": "schema:SportsTeam",
+        "type": 1
+      },
+      {
+        "id": 3,
+        "label": "schema:Player",
+        "type": 1
+      },
+      {
+        "id": 4,
+        "label": "schema:Player",
+        "type": 1
+      },
+      {
+        "id": 5,
+        "label": "schema:Player",
+        "type": 1
+      }
+    ]
+  },
+  "node_hops": [
+    0,
+    -1,
+    -1,
+    -1,
+    -1,
+    -2
+  ],
+  "lt0hop_node_ids": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "eq0hop_node_ids": [
+    0
+  ],
+  "gt0hop_node_ids": [],
+  "lt0hop_index_node_lbls": {
+    "schema:SportsTeam": [
+      2
+    ],
+    "schema:Player": [
+      1,
+      3,
+      4,
+      5
+    ]
+  },
+  "gt0hop_index_node_lbls": {}
+}

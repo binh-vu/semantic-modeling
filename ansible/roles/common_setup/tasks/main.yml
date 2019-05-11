@@ -1,0 +1,17 @@
+- name: setup working directory
+  become: yes
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+    mode: 0755
+  with_items:
+    - "/workspace"
+    - "/workspace/DataIntegration"
+    - "/workspace/downloads"
+    - "{{ ansible_env.HOME }}/.ansible"
+- import_tasks: redhat.yml
+  when: ansible_os_family|lower == 'redhat'
+- import_tasks: debian.yml
+  when: ansible_os_family|lower == 'debian'

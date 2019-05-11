@@ -1,0 +1,56 @@
+{
+  "comment": "Example 1, no dependent but have incorrect link",
+  "gold_sm": [
+    "ManMadeObject1--was_classified_by--TypeAssignment1",
+    "ManMadeObject1--was_classified_by--TypeAssignment2",
+    "TypeAssignment1--assigned--Type1",
+    "TypeAssignment2--assigned--Type2",
+    "ManMadeObject1--referred_by--LinguisticObject1",
+    "ManMadeObject1--referred_by--LinguisticObject2",
+    "ManMadeObject1--referred_by--LinguisticObject3",
+    "ManMadeObject1--produce_by--Production1",
+    "Production1--referred_by--LinguisticObject4",
+    "Production1--creator--Actor1",
+    "Actor1--referred_by--LinguisticObject5",
+    "Actor1--referred_by--LinguisticObject6",
+    "Actor1--referred_by--LinguisticObject7",
+    "Actor1--referred_by--LinguisticObject8",
+    "Type1--label--type_a:d",
+    "Type2--label--type_b:d",
+    "LinguisticObject1--value--Medium:d",
+    "LinguisticObject2--value--CreditLine:d",
+    "LinguisticObject3--value--Dimensions:d",
+    "LinguisticObject4--value--xxx:d",
+    "Actor1--label--artist_name:d",
+    "LinguisticObject5--value--name_type_a:d",
+    "LinguisticObject6--value--name_type_b:d",
+    "LinguisticObject7--value--name_type_c:d",
+    "LinguisticObject8--value--name_type_d:d"
+  ],
+  "pred_sm": [
+    "ManMadeObject1--was_classified_by--TypeAssignment1",
+    "TypeAssignment1--assigned--Type1",
+    "ManMadeObject1--referred_by--LinguisticObject1",
+    "ManMadeObject1--produce_by--Production1",
+    "Production1--referred_by--LinguisticObject2",
+    "Production1--creator--Actor1",
+    "Type1--label--type_b:d",
+    "LinguisticObject1--value--Dimensions:d",
+    "LinguisticObject2--value--xxx:d",
+    "Actor1--label--artist_name:d"
+  ],
+  "bijection": {
+    "ManMadeObject1": "ManMadeObject1",
+    "TypeAssignment2": "TypeAssignment1",
+    "Type2": "Type1",
+    "LinguisticObject3": "LinguisticObject1",
+    "Production1": "Production1",
+    "Actor1": "Actor1",
+    "LinguisticObject4": "LinguisticObject2"
+  },
+  "f1_precision_recall": [
+    0.5714285714285715,
+    1.0,
+    0.4
+  ]
+}

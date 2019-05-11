@@ -1,0 +1,195 @@
+commands:
+-   _type_: UnpackOneElementList
+    input_attr: birth_death_date
+-   _type_: UnpackOneElementList
+    input_attr: name
+-   _type_: UnpackOneElementList
+    input_attr: biography
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.parse_noisy_birth_and_death_year(getValue("birth_death_date"))[0]
+    default_error_value: ''
+    input_attr_paths:
+    - birth_death_date
+    new_attr_name: birth_date
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.parse_noisy_birth_and_death_year(getValue("birth_death_date"))[1]
+    default_error_value: ''
+    input_attr_paths:
+    - birth_death_date
+    new_attr_name: death_date
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_artist_uri("http://www.janm.org/artist/", getValue("name"))
+    default_error_value: ''
+    input_attr_paths:
+    - name
+    new_attr_name: artist_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("birth_date"))
+    default_error_value: ''
+    input_attr_paths:
+    - birth_date
+    new_attr_name: birth_date_earliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("birth_date"))
+    default_error_value: ''
+    input_attr_paths:
+    - birth_date
+    new_attr_name: birth_date_latest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_earliest(getValue("death_date"))
+    default_error_value: ''
+    input_attr_paths:
+    - death_date
+    new_attr_name: death_date_earliest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = Misc.get_date_latest(getValue("death_date"))
+    default_error_value: ''
+    input_attr_paths:
+    - death_date
+    new_attr_name: death_date_latest
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_birth_uri(getValue("artist_uri"), getValue("birth_date"))
+    default_error_value: ''
+    input_attr_paths:
+    - artist_uri
+    - birth_date
+    new_attr_name: birth_uri
+-   _type_: PyTransformNewColumn
+    code: >-
+        __return__ = ArtistHelper.get_death_uri(getValue("artist_uri"), getValue("death_date"))
+    default_error_value: ''
+    input_attr_paths:
+    - artist_uri
+    - death_date
+    new_attr_name: death_uri
+-   _type_: SetSemanticType
+    domain: crm:E39_Actor
+    input_attr_path: artist_uri
+    node_id: crm:E39_Actor1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: death_date_latest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E64_End_of_Existence
+    input_attr_path: death_uri
+    node_id: crm:E64_End_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birth_date_latest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82b_end_of_the_end
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birth_date_earliest
+    node_id: crm:E52_Time-Span1
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: birth_date
+    node_id: crm:E52_Time-Span1
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: death_date_earliest
+    node_id: crm:E52_Time-Span2
+    type: crm:P82a_begin_of_the_begin
+-   _type_: SetSemanticType
+    domain: crm:E33_Linguistic_Object
+    input_attr_path: biography
+    node_id: crm:E33_Linguistic_Object1
+    type: rdf:value
+-   _type_: SetSemanticType
+    domain: crm:E52_Time-Span
+    input_attr_path: death_date
+    node_id: crm:E52_Time-Span2
+    type: rdfs:label
+-   _type_: SetSemanticType
+    domain: crm:E63_Beginning_of_Existence
+    input_attr_path: birth_uri
+    node_id: crm:E63_Beginning_of_Existence1
+    type: karma:classLink
+-   _type_: SetSemanticType
+    domain: crm:E82_Actor_Appellation
+    input_attr_path: name
+    node_id: crm:E82_Actor_Appellation1
+    type: rdf:value
+-   _type_: SetInternalLink
+    link_lbl: crm:P129i_is_subject_of
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E33_Linguistic_Object1
+    target_uri: crm:E33_Linguistic_Object
+-   _type_: SetInternalLink
+    link_lbl: crm:P131_is_identified_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E82_Actor_Appellation1
+    target_uri: crm:E82_Actor_Appellation
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E63_Beginning_of_Existence1
+    source_uri: crm:E63_Beginning_of_Existence
+    target_id: crm:E52_Time-Span1
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P4_has_time-span
+    source_id: crm:E64_End_of_Existence1
+    source_uri: crm:E64_End_of_Existence
+    target_id: crm:E52_Time-Span2
+    target_uri: crm:E52_Time-Span
+-   _type_: SetInternalLink
+    link_lbl: crm:P92i_was_brought_into_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E63_Beginning_of_Existence1
+    target_uri: crm:E63_Beginning_of_Existence
+-   _type_: SetInternalLink
+    link_lbl: crm:P93i_was_taken_out_of_existence_by
+    source_id: crm:E39_Actor1
+    source_uri: crm:E39_Actor
+    target_id: crm:E64_End_of_Existence1
+    target_uri: crm:E64_End_of_Existence
+history:
+    all_attrs:
+    - birth_death_date
+    - name
+    - biography
+    - birth_date
+    - death_date
+    - artist_uri
+    - birth_date_earliest
+    - birth_date_latest
+    - death_date_earliest
+    - death_date_latest
+    - birth_uri
+    - death_uri
+    ignored_attrs:
+    - birth_death_date
+    input_attrs:
+    - birth_death_date
+    - name
+    - biography
+    processed_attrs:
+    - name
+    - biography
+    - birth_date
+    - death_date
+    - artist_uri
+    - birth_date_earliest
+    - birth_date_latest
+    - death_date_earliest
+    - death_date_latest
+    - birth_uri
+    - death_uri
